@@ -1,0 +1,7 @@
+{
+    "admin": false,
+    "description": "You can create diagrams within diagrams - and reuse a diagram across many otherwise disconnected processes.",
+    "display_name": "Subprocesses and Call Activities",
+    "display_order": 30,
+    "parent_groups": null
+}

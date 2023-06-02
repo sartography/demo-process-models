@@ -1,0 +1,7 @@
+{
+    "admin": false,
+    "description": "Data Objects allow you to control access to information, and share that information from a central location.",
+    "display_name": "Data Objects",
+    "display_order": 10,
+    "parent_groups": null
+}

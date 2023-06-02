@@ -1,0 +1,7 @@
+{
+    "admin": false,
+    "description": "This group of examples covers deeper topics that will become critical as your diagrams grow in complexity.",
+    "display_name": "In Depth Topics",
+    "display_order": 20,
+    "parent_groups": null
+}

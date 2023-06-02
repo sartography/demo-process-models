@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0">
+  <bpmn:process id="SR-User_Info" name="Shared Resources: User Info" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1q8xtg6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1q8xtg6" sourceRef="StartEvent_1" targetRef="SR-User_Info-Set_Defaults" />
+    <bpmn:businessRuleTask id="Activity_0v13afu" name="Get User Info">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>SR-User_Info</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_05s4pvl</bpmn:incoming>
+      <bpmn:outgoing>Flow_08nmyrt</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:endEvent id="Event_0fb034d">
+      <bpmn:incoming>Flow_0ltzuow</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_08nmyrt" sourceRef="Activity_0v13afu" targetRef="Gateway_19npvp5" />
+    <bpmn:exclusiveGateway id="Gateway_0byohhl">
+      <bpmn:incoming>Flow_1mplhly</bpmn:incoming>
+      <bpmn:incoming>Flow_09aacbk</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gd83n0</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1gd83n0" sourceRef="Gateway_0byohhl" targetRef="SR-User_Info-Delete_Unneeded_Variables" />
+    <bpmn:sequenceFlow id="Flow_05s4pvl" sourceRef="SR-User_Info-Set_Defaults" targetRef="Activity_0v13afu" />
+    <bpmn:scriptTask id="SR-User_Info-Set_Defaults" name="Set Defaults">
+      <bpmn:incoming>Flow_1q8xtg6</bpmn:incoming>
+      <bpmn:outgoing>Flow_05s4pvl</bpmn:outgoing>
+      <bpmn:script># If not previously set, set find_user to current_user
+try:
+  find_user
+except NameError:
+  find_user = current_user["username"]
+
+# Check if find_user has a Status email
+is_status_email = (find_user[-9:] == "status.im")</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:exclusiveGateway id="Gateway_19npvp5" name="Status Email?" default="Flow_0sypyzb">
+      <bpmn:incoming>Flow_08nmyrt</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sypyzb</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1mplhly</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0sypyzb" name="Yes" sourceRef="Gateway_19npvp5" targetRef="Activity_1eab90d" />
+    <bpmn:sequenceFlow id="Flow_1mplhly" name="No" sourceRef="Gateway_19npvp5" targetRef="Gateway_0byohhl">
+      <bpmn:conditionExpression>not(is_status_email)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0ltzuow" sourceRef="SR-User_Info-Delete_Unneeded_Variables" targetRef="Event_0fb034d" />
+    <bpmn:scriptTask id="SR-User_Info-Delete_Unneeded_Variables" name="Delete Unneeded Variables">
+      <bpmn:incoming>Flow_1gd83n0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ltzuow</bpmn:outgoing>
+      <bpmn:script># Delete Variables that do not need to be used later
+del(find_user)</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:callActivity id="Activity_1eab90d" name="Call ST: Get External Data" calledElement="Get_External_Data">
+      <bpmn:extensionElements>
+        <spiffworkflow:preScript>get_employee_id = userBambooId
+external_data_task_name = "Process Start"</spiffworkflow:preScript>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0sypyzb</bpmn:incoming>
+      <bpmn:outgoing>Flow_09aacbk</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="Flow_09aacbk" sourceRef="Activity_1eab90d" targetRef="Gateway_0byohhl" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="SR-User_Info">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="2" y="209" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hlcuhi_di" bpmnElement="Activity_0v13afu">
+        <dc:Bounds x="270" y="187" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1azbkzp_di" bpmnElement="SR-User_Info-Set_Defaults">
+        <dc:Bounds x="100" y="187" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_19npvp5_di" bpmnElement="Gateway_19npvp5" isMarkerVisible="true">
+        <dc:Bounds x="445" y="202" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="386" y="243" width="68" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ufz8x5_di" bpmnElement="Activity_1eab90d">
+        <dc:Bounds x="580" y="187" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0fb034d_di" bpmnElement="Event_0fb034d">
+        <dc:Bounds x="1002" y="209" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0byohhl_di" bpmnElement="Gateway_0byohhl" isMarkerVisible="true">
+        <dc:Bounds x="755" y="202" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0qu8ajx_di" bpmnElement="SR-User_Info-Delete_Unneeded_Variables">
+        <dc:Bounds x="850" y="187" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1q8xtg6_di" bpmnElement="Flow_1q8xtg6">
+        <di:waypoint x="38" y="227" />
+        <di:waypoint x="100" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08nmyrt_di" bpmnElement="Flow_08nmyrt">
+        <di:waypoint x="370" y="227" />
+        <di:waypoint x="445" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gd83n0_di" bpmnElement="Flow_1gd83n0">
+        <di:waypoint x="805" y="227" />
+        <di:waypoint x="850" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_05s4pvl_di" bpmnElement="Flow_05s4pvl">
+        <di:waypoint x="200" y="227" />
+        <di:waypoint x="270" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sypyzb_di" bpmnElement="Flow_0sypyzb">
+        <di:waypoint x="495" y="227" />
+        <di:waypoint x="580" y="227" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="521" y="209" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mplhly_di" bpmnElement="Flow_1mplhly">
+        <di:waypoint x="470" y="252" />
+        <di:waypoint x="470" y="320" />
+        <di:waypoint x="780" y="320" />
+        <di:waypoint x="780" y="252" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="622" y="333" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ltzuow_di" bpmnElement="Flow_0ltzuow">
+        <di:waypoint x="950" y="227" />
+        <di:waypoint x="1002" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09aacbk_di" bpmnElement="Flow_09aacbk">
+        <di:waypoint x="680" y="227" />
+        <di:waypoint x="755" y="227" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

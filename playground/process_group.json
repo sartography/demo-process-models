@@ -1,0 +1,9 @@
+{
+    "admin": false,
+    "description": "This restricted access area is where we can set up private process models and process groups for your own testing, development and experimentation.",
+    "display_name": "Playground",
+    "display_order": 100,
+    "parent_groups": null,
+    "process_groups": [],
+    "process_models": []
+}

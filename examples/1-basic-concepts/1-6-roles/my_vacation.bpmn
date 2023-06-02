@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:collaboration id="Collaboration_0y7oun0">
+    <bpmn:participant id="Participant_0sjjdhc" processRef="Process_9wllce2" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_9wllce2" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1tmn5gq">
+      <bpmn:lane id="Lane_0wgzewb">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_121gfc7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1pi0b2e</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_15s7af6" name="approvers">
+        <bpmn:flowNodeRef>Activity_041y60h</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_08w5ra5</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_121gfc7" name="Describe Vacation">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="your-favorite-vacation-spot-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="your-favorite-vacation-spot-uischema.json" />
+        </spiffworkflow:properties>
+        <spiffworkflow:postScript />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_08w5ra5</bpmn:incoming>
+      <bpmn:outgoing>Flow_0moponf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_08w5ra5" sourceRef="StartEvent_1" targetRef="Activity_121gfc7" />
+    <bpmn:endEvent id="Event_1pi0b2e">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser># All Done!
+</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dsxo60</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0moponf" sourceRef="Activity_121gfc7" targetRef="Activity_041y60h" />
+    <bpmn:sequenceFlow id="Flow_0dsxo60" sourceRef="Activity_041y60h" targetRef="Event_1pi0b2e" />
+    <bpmn:userTask id="Activity_041y60h" name="Approve Vacation">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="approve-vacation-request-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="approve-vacation-request-uischema.json" />
+        </spiffworkflow:properties>
+        <spiffworkflow:instructionsForEndUser>Please complete the form below to submit an approval request for the Vacation.</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0moponf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dsxo60</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0y7oun0">
+      <bpmndi:BPMNShape id="Participant_0sjjdhc_di" bpmnElement="Participant_0sjjdhc" isHorizontal="true">
+        <dc:Bounds x="450" y="70" width="600" height="300" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_15s7af6_di" bpmnElement="Lane_15s7af6" isHorizontal="true">
+        <dc:Bounds x="480" y="220" width="570" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wgzewb_di" bpmnElement="Lane_0wgzewb" isHorizontal="true">
+        <dc:Bounds x="480" y="70" width="570" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="509" y="149" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0axyuw7_di" bpmnElement="Activity_121gfc7">
+        <dc:Bounds x="600" y="127" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1pi0b2e_di" bpmnElement="Event_1pi0b2e">
+        <dc:Bounds x="962" y="149" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lxj3pw_di" bpmnElement="Activity_041y60h">
+        <dc:Bounds x="760" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_08w5ra5_di" bpmnElement="Flow_08w5ra5">
+        <di:waypoint x="545" y="167" />
+        <di:waypoint x="600" y="167" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0moponf_di" bpmnElement="Flow_0moponf">
+        <di:waypoint x="700" y="167" />
+        <di:waypoint x="725" y="167" />
+        <di:waypoint x="725" y="310" />
+        <di:waypoint x="760" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dsxo60_di" bpmnElement="Flow_0dsxo60">
+        <di:waypoint x="860" y="310" />
+        <di:waypoint x="891" y="310" />
+        <di:waypoint x="891" y="167" />
+        <di:waypoint x="962" y="167" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

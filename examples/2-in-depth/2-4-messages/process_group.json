@@ -1,0 +1,7 @@
+{
+    "admin": false,
+    "description": "Two running processes can communicate with each other through messages.  Messages also offer a way for external applications to make API calls into SpiffWorkflow.",
+    "display_name": "Messages",
+    "display_order": 40,
+    "parent_groups": null
+}
