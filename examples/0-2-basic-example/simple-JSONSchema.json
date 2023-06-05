@@ -1,25 +1,51 @@
 {
-  "title": "A registration form",
-  "description": "A simple form example.",
+  "title": "True/False Questions about Chuck Norris",
+  "description": "Please place a checkmark next to the questions that are true.  You will receive a just a fair reward for your responses.",
   "type": "object",
-  "required": [
-    "firstName",
-    "lastName"
-  ],
+  "required": 
+  ["pushups", "thanos", "bulletproof" ],
   "properties": {
-    "firstName": {
-      "type": "string",
-      "title": "First name",
-      "default": "Chuck"
+    "pushups": {
+      "type": "boolean",
+      "title": "When Chuck Norris does a pushup, he’s pushing the Earth down.",
+      "oneOf": [
+        {
+          "title": "True",
+          "const": true
+        },
+        {
+          "title": "False",
+          "const": false
+        }
+      ]
     },
-    "lastName": {
-      "type": "string",
-      "title": "Last name"
+    "thanos": {
+      "type": "boolean",
+      "title": "Chuck Norris was given a bloody nose by Thanos the god like villan from the Avengers Movies",
+      "oneOf": [
+        {
+          "title": "True",
+          "const": true
+        },
+        {
+          "title": "False",
+          "const": false
+        }
+      ]
     },
-    "telephone": {
-      "type": "string",
-      "title": "Telephone",
-      "minLength": 10
+    "bulletproof": {
+      "type": "boolean",
+      "title": "A bulletproof vest wears Chuck Norris for protection.",
+      "oneOf": [
+        {
+          "title": "True",
+          "const": true
+        },
+        {
+          "title": "False",
+          "const": false
+        }
+      ]
     }
   }
 }

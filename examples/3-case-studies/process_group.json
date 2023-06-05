@@ -1,7 +1,7 @@
 {
     "admin": false,
     "description": "These examples are simplified versions of real-world problems we've handled with SpiffWorkflow.",
-    "display_name": "Case Studies",
+    "display_name": "3. Case Studies",
     "display_order": 30,
     "parent_groups": null
 }

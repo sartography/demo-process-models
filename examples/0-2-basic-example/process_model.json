@@ -1,10 +1,9 @@
 {
     "description": "This example introduces you to the core tools and concepts.  Each area of this diagram is covered in detail in the basic-concepts group",
     "display_name": "Basic Example",
-    "display_order": 2,
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
-    "files": [],
+    "metadata_extraction_paths": null,
     "primary_file_name": "user-guide-basics.bpmn",
     "primary_process_id": "Proccess_rlm9uj3"
 }

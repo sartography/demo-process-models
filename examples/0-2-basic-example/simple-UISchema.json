@@ -1,20 +1,20 @@
 {
-  "firstName": {
-    "ui:readonly": true,
-    "ui:emptyValue": "",
-    "ui:autocomplete": "family-name",
-    "ui:help": " "
-  },
-  "lastName": {
-    "ui:autofocus": true,
-    "ui:emptyValue": "",
-    "ui:autocomplete": "given-name",
-    "ui:help": " "
-  },
-  "telephone": {
-    "ui:help": " ",
+  "pushups": {
+    "ui:widget": "radio",
     "ui:options": {
-      "inputType": "tel"
+      "inline": true
+    }
+  },
+  "thanos": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "bulletproof": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
     }
   }
 }

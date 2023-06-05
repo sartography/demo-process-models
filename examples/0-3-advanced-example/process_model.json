@@ -1,10 +1,9 @@
 {
     "description": "This example showcases some of the more advanced features of SpiffWorkflow, these topics are covered in more detail in the in-depth section.",
-    "display_name": "Advanced Examples",
-    "display_order": 3,
+    "display_name": "Advanced Example",
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
-    "files": [],
+    "metadata_extraction_paths": null,
     "primary_file_name": "user-guide-basics.bpmn",
     "primary_process_id": "Proccess_rlm9uj3"
 }
