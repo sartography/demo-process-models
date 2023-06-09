@@ -62,10 +62,9 @@ if not thanos:
 
 if pushups:
   score = score + 1  
-
 </bpmn:script>
     </bpmn:scriptTask>
-    <bpmn:businessRuleTask id="Activity_0sualuq" name="Calculate Score">
+    <bpmn:businessRuleTask id="Activity_0sualuq" name="Determine Score Message">
       <bpmn:extensionElements>
         <spiffworkflow:calledDecisionId>decision_1</spiffworkflow:calledDecisionId>
       </bpmn:extensionElements>
@@ -213,7 +212,7 @@ Chuck Norris is proud of you.
       <bpmndi:BPMNShape id="Gateway_1nez60d_di" bpmnElement="Gateway_1nez60d" isMarkerVisible="true">
         <dc:Bounds x="535" y="192" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="571" y="236" width="80" height="27" />
+          <dc:Bounds x="470" y="176" width="80" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0nv529h_di" bpmnElement="Activity_1aggwmx">

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_a7vdmu0" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0zkp5pl</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0zkp5pl" sourceRef="StartEvent_1" targetRef="Activity_14d9qci" />
+    <bpmn:userTask id="Activity_16bfpis" name="Simple Form">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="simple_form.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="simple_form_ui.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1vmz53w</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xjn0ft</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1vmz53w" sourceRef="Activity_14d9qci" targetRef="Activity_16bfpis" />
+    <bpmn:manualTask id="Activity_14d9qci">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>### Web Forms 
+They seem simple enough.  But they are not.  Text fields and drop downs are easy to define.  But a date picker?  Real time validation that takes other responses into account (don't chose a return date later than the arrival date!)  These behaviors are common on websites, but are often custom built with lots of HTML and JavaScript, and a misery to maintain.
+
+
+
+
+RJSFs amazing playground](https://rjsf-team.github.io/react-jsonschema-form/) </spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0zkp5pl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1vmz53w</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:sequenceFlow id="Flow_1xjn0ft" sourceRef="Activity_16bfpis" targetRef="Activity_1t915mu" />
+    <bpmn:userTask id="Activity_1t915mu" name="Validation">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="validation.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="validation_ui.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1xjn0ft</bpmn:incoming>
+      <bpmn:outgoing>Flow_16xczsm</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_16xczsm" sourceRef="Activity_1t915mu" targetRef="Activity_0amhy21" />
+    <bpmn:userTask id="Activity_0amhy21" name="Repeated Sections">
+      <bpmn:incoming>Flow_16xczsm</bpmn:incoming>
+      <bpmn:outgoing>Flow_1s8dhlh</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0f013r6">
+      <bpmn:incoming>Flow_1s8dhlh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1s8dhlh" sourceRef="Activity_0amhy21" targetRef="Event_0f013r6" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_a7vdmu0">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05dmu6m_di" bpmnElement="Activity_16bfpis">
+        <dc:Bounds x="430" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jjg26w_di" bpmnElement="Activity_14d9qci">
+        <dc:Bounds x="270" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1nc9u16_di" bpmnElement="Activity_1t915mu">
+        <dc:Bounds x="590" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0p5juqu_di" bpmnElement="Activity_0amhy21">
+        <dc:Bounds x="750" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0f013r6_di" bpmnElement="Event_0f013r6">
+        <dc:Bounds x="912" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0zkp5pl_di" bpmnElement="Flow_0zkp5pl">
+        <di:waypoint x="215" y="177" />
+        <di:waypoint x="270" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vmz53w_di" bpmnElement="Flow_1vmz53w">
+        <di:waypoint x="370" y="177" />
+        <di:waypoint x="430" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xjn0ft_di" bpmnElement="Flow_1xjn0ft">
+        <di:waypoint x="530" y="177" />
+        <di:waypoint x="590" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16xczsm_di" bpmnElement="Flow_16xczsm">
+        <di:waypoint x="690" y="177" />
+        <di:waypoint x="750" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1s8dhlh_di" bpmnElement="Flow_1s8dhlh">
+        <di:waypoint x="850" y="177" />
+        <di:waypoint x="912" y="177" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

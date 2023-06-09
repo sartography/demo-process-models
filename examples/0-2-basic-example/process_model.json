@@ -1,6 +1,6 @@
 {
-    "description": "This example introduces you to the core tools and concepts.  Each area of this diagram is covered in detail in the basic-concepts group",
-    "display_name": "Basic Example",
+    "description": "A more complete BPMN Model that introduces a number of core concepts working together.",
+    "display_name": "Overview ",
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
     "metadata_extraction_paths": null,

@@ -1,7 +1,4 @@
 {
-    "admin": false,
     "description": "These process models are the basic building blocks of our system.  Understand these individually, then put them together anyway you can imagine.",
-    "display_name": "1. Basics",
-    "display_order": 10,
-    "parent_groups": null
+    "display_name": "1. Basics"
 }

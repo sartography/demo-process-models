@@ -1,10 +1,8 @@
 {
     "description": "How to use forms to collect information from end users.",
     "display_name": "Using Forms",
-    "display_order": 0,
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
-    "files": [],
     "metadata_extraction_paths": [
         {
             "key": "location",
@@ -15,6 +13,6 @@
             "path": "season"
         }
     ],
-    "primary_file_name": "vacation.bpmn",
-    "primary_process_id": "Process_3iqzgmz"
+    "primary_file_name": "form_examples.bpmn",
+    "primary_process_id": "Process_a7vdmu0"
 }
