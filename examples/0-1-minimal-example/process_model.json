@@ -1,5 +1,5 @@
 {
-    "description": "A 'Hello World' Process, the simplest possible executable BPMN Diagram.",
+    "description": "A 'Hello World' Process, the simplest possible executable BPMN Diagram!",
     "display_name": "Minimal Example",
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
