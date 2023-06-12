@@ -4,7 +4,10 @@
   "type": "object",
   "required": [
     "firstName",
-    "lastName"
+    "lastName",
+    "age",
+    "bio",
+    "telephone"
   ],
   "properties": {
     "firstName": {
@@ -14,25 +17,28 @@
     },
     "lastName": {
       "type": "string",
-      "title": "Last name"
+      "title": "Last name",
+      "default": "Norris"
     },
     "age": {
       "type": "integer",
-      "title": "Age"
+      "title": "Age",
+      "default": 83,
+      "minimum": 18,
+      "maximum": 130
     },
     "bio": {
       "type": "string",
-      "title": "Bio"
-    },
-    "password": {
-      "type": "string",
-      "title": "Password",
-      "minLength": 3
+      "title": "Bio",
+      "default": "Chuck Norris was once bitten by a poisonous snake. And after a week of excruciating pain, the snake died.",
+      "minLength": 10
     },
     "telephone": {
       "type": "string",
       "title": "Telephone",
-      "minLength": 10
+      "pattern": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$",
+			"validationErrorMessage": "Please provide a valid phone number, for example: +91 (123) 456-7890 or +1 540-555-1234",
+      "default": "1-800-kick-ass"
     }
   }
 }

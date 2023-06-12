@@ -1,7 +1,4 @@
 {
-    "admin": false,
-    "description": "Data Objects allow you to control access to information, and share that information from a central location.",
-    "display_name": "Data Objects",
-    "display_order": 10,
-    "parent_groups": null
+    "description": "COMING SOON - We will discuss Data Objects and how they allow you to control access to information, create reusable call activities, and even share static information between processes with Data Stores.",
+    "display_name": "Data Objects"
 }

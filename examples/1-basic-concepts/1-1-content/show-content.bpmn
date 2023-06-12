@@ -16,7 +16,10 @@ In the diagram below each Task is clickable.  When you click on a task, it will 
 Be sure to open up this diagram in edit mode, so you can see the properties panel.  To do this, click on "Displaying Content" in the Breadcrumbs above, then open the file "show-content.bpmn".  Then click on the manual tasks and will see they each have content in their "Instructions" in the properties panel on the right.  You can open these instructions in the markdown editor by clicking on the "Launch Editor" button which provides a great way to see how Markdown and Jinja can be used to create content.
 
 #### Try it out! 
-Complete the "Request a Playground" task to get access to your own private area of this Demo SpiffWorkflow instance.  There you can build your own documentation! </spiffworkflow:instructionsForEndUser>
+Complete the "Request a Playground" task to get access to your own private area of this Demo SpiffWorkflow instance.  There you can build your own documentation! 
+
+### Get Involved!
+Please get in touch with us!  We would love to help you build beautiful documentation into your workflows.  There is no end to what we can accomplish if we work together.  Please reach out to Dan at  [dan@sartography.com](mailto:dan@sartography.com)  to get started.</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1thoqro</bpmn:incoming>
     </bpmn:endEvent>

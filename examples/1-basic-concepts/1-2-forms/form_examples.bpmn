@@ -11,44 +11,149 @@
           <spiffworkflow:property name="formJsonSchemaFilename" value="simple_form.json" />
           <spiffworkflow:property name="formUiSchemaFilename" value="simple_form_ui.json" />
         </spiffworkflow:properties>
+        <spiffworkflow:instructionsForEndUser>This is a simple form with pre-filled default values.  All fields are required. The Age range is limited to sane values.    You can test out validation by:
+
+1. entering an age of greater than 130, or less than 18.  
+2. not providing a first name
+3. providing a bio that is less than 10 characters long.
+
+*Please Note: The phone number is intentionally invalid - it wants the number in international notation, and demonstrates the ability to define complex requirements for fields using a regular expression syntax.*</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1vmz53w</bpmn:incoming>
       <bpmn:outgoing>Flow_1xjn0ft</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1vmz53w" sourceRef="Activity_14d9qci" targetRef="Activity_16bfpis" />
-    <bpmn:manualTask id="Activity_14d9qci">
+    <bpmn:manualTask id="Activity_14d9qci" name="Introduction">
       <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>### Web Forms 
-They seem simple enough.  But they are not.  Text fields and drop downs are easy to define.  But a date picker?  Real time validation that takes other responses into account (don't chose a return date later than the arrival date!)  These behaviors are common on websites, but are often custom built with lots of HTML and JavaScript, and a misery to maintain.
+        <spiffworkflow:instructionsForEndUser>### TLDR:
+You can build very complex forms in SpiffWorkflow.  We have a simple integrated form builder to get you started  but you can reach well beyond that tool to create more complex forms as your needs grow.
 
+### Web Forms 
+Forms seem simple enough.  But it depends greatly on your expectations.  Many of the attractive / intuitive forms you encounter on the web are custom built using the JavaScript programming language - and designed for a specific circumstance and need.
 
+There are an insane number of websites that promise easy form building, try googleing for "Easy form builder" and bask the warm glow of a 1000 ads.  Most of them use methods that run counter to some of our most core values:
 
+- **Favor open standards** over proprietary solutions
+- **Anticipate growth and learning**. SpiffWorkflow users learn, adapt and grow.  Like BPMN and Python, we want a form builder that is easy to learn, but also powerful enough to handle complex situations.  You don't want to have to switch to a new form builder when you need to do something more complicated.
 
-RJSFs amazing playground](https://rjsf-team.github.io/react-jsonschema-form/) </spiffworkflow:instructionsForEndUser>
+### Enter JSON Schema
+JSON is how you view most of the data that is collected and manged by SpiffWorkflow.  It looks like this:
+```json
+{
+  "first_name": "Dan",
+  "dnd_level": 20,
+  "awesomeness_level": "∞"
+}
+```
+There is an emerging standard called JSON Schema that provides a way to describe the structure of the data that should be included in a Json file.  It looks like this:
+```json
+{
+  "properties": {
+    "first_name": { "type": "string" },
+    "dnd_level": { "type": "number" },
+    "awesomeness_level": { "type": "string" }
+  }
+}
+```
+Some smart people said "Hurm, that Json Schema is pretty much all you need to know to build a form!" And so a library came along that does just that.  It is called [React JSON Schema Form](https://rjsf-team.github.io/react-jsonschema-form/docs/) or RJSF.  Because you may need to provide some adjustments to how everything is displayed RJSF allows you to provide UI settings in a separate file, so you can say things like "Make this a radio list, not a drop down".  Both files are very straight forward.
+
+These examples you will see over the next few screens are all defined with JSON Schema files.  There is a lot more to learn, and that information is best gleaned from the [RJSF docs](https://rjsf-team.github.io/react-jsonschema-form/docs/).  But please know this:
+
+* RJSF is easy to learn.
+* RJSF is powerful enough to handle complex situations.
+* RJSF is open source and free to use.
+* RJSF is based on Json Schema, an open standard
+
+### What's Next?
+Let's take a look at some forms you can build and use within Spiff-Arena.</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0zkp5pl</bpmn:incoming>
       <bpmn:outgoing>Flow_1vmz53w</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:sequenceFlow id="Flow_1xjn0ft" sourceRef="Activity_16bfpis" targetRef="Activity_1t915mu" />
-    <bpmn:userTask id="Activity_1t915mu" name="Validation">
+    <bpmn:sequenceFlow id="Flow_1xjn0ft" sourceRef="Activity_16bfpis" targetRef="Activity_1vh3soz" />
+    <bpmn:endEvent id="Event_0f013r6">
       <bpmn:extensionElements>
-        <spiffworkflow:properties>
-          <spiffworkflow:property name="formJsonSchemaFilename" value="validation.json" />
-          <spiffworkflow:property name="formUiSchemaFilename" value="validation_ui.json" />
-        </spiffworkflow:properties>
+        <spiffworkflow:instructionsForEndUser>### Thanks for checking out our Web Forms!
+
+We would love to create a better built in Form Builder - in fact it is the top item on our official [Wish List](https://spiff-arena.readthedocs.io/en/latest/wish_list/wish_list.html#form-builder).    We are looking for partnerships, funding sources, and adopters willing to help us create the best possible experience, while maintaining our commitment to open standards and leaving room for our BPMN authors and architects to grow and learn along with us.
+
+### Get Involved!
+Please get in touch with us!  We would love to help you integrate Web Forms into your workflows.  There is no end to what we can accomplish if we work together.  Please reach out to Dan at [dan@sartography.com](mailto:dan@sartography.com) to get started.</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1oou3ty</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1oou3ty" sourceRef="Activity_1vh3soz" targetRef="Event_0f013r6" />
+    <bpmn:manualTask id="Activity_1vh3soz" name="Simple Form Explination">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>### The Code behind the last form
+
+The form you saw on the previous page is controlled by this Json Schema (which you can find in the list of files associated with this process model, the file is called "simple_form.json".  It looks like this:
+
+```json
+{
+  "title": "A registration form",
+  "description": "A simple form example.",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName",
+    "age",
+    "bio",
+    "telephone"
+  ],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "title": "First name",
+      "default": "Chuck"
+    },
+    "lastName": {
+      "type": "string",
+      "title": "Last name",
+      "default": "Norris"
+    },
+    "age": {
+      "type": "integer",
+      "title": "Age",
+      "default": 83,
+      "minimum": 18,
+      "maximum": 130
+    },
+    "bio": {
+      "type": "string",
+      "title": "Bio",
+      "default": "Chuck Norris was once bitten by a poisonous snake. And after a week of excruciating pain, the snake died.",
+      "minLength": 10
+    },
+    "telephone": {
+      "type": "string",
+      "title": "Telephone",
+      "pattern": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$",
+			"validationErrorMessage": "Please provide a valid phone number, for example: +91 (123) 456-7890 or +1 540-555-1234",
+      "default": "1-800-kick-ass"
+    }
+  }
+}
+```
+
+It is not in a drag and drop editor, but it is straight forward - and it can support A LOT of very complex data structures.  You can ...
+
+1. Specify which fields are required
+2. Provide type and title of each field (from strings, to numbers, to lists)
+3. Set default values (you can offer suggestions or provide placeholder text)
+4. Set minimum lengths, and valid ranges (this also works with dates)
+5. Provide complex patterns (using Regular Expressions) that must match the input.
+6. And a LOT more things that aren't shown here .....
+
+
+### What's Next
+These are just the basics. We suggest you checkout the [RJSF](https://rjsf-team.github.io/react-jsonschema-form/docs/) for more examples.
+
+</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1xjn0ft</bpmn:incoming>
-      <bpmn:outgoing>Flow_16xczsm</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_16xczsm" sourceRef="Activity_1t915mu" targetRef="Activity_0amhy21" />
-    <bpmn:userTask id="Activity_0amhy21" name="Repeated Sections">
-      <bpmn:incoming>Flow_16xczsm</bpmn:incoming>
-      <bpmn:outgoing>Flow_1s8dhlh</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:endEvent id="Event_0f013r6">
-      <bpmn:incoming>Flow_1s8dhlh</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_1s8dhlh" sourceRef="Activity_0amhy21" targetRef="Event_0f013r6" />
+      <bpmn:outgoing>Flow_1oou3ty</bpmn:outgoing>
+    </bpmn:manualTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_a7vdmu0">
@@ -61,15 +166,14 @@ RJSFs amazing playground](https://rjsf-team.github.io/react-jsonschema-form/) </
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0jjg26w_di" bpmnElement="Activity_14d9qci">
         <dc:Bounds x="270" y="137" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1nc9u16_di" bpmnElement="Activity_1t915mu">
-        <dc:Bounds x="590" y="137" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0p5juqu_di" bpmnElement="Activity_0amhy21">
-        <dc:Bounds x="750" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0f013r6_di" bpmnElement="Event_0f013r6">
-        <dc:Bounds x="912" y="159" width="36" height="36" />
+        <dc:Bounds x="762" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_015egap_di" bpmnElement="Activity_1vh3soz">
+        <dc:Bounds x="590" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0zkp5pl_di" bpmnElement="Flow_0zkp5pl">
         <di:waypoint x="215" y="177" />
@@ -83,13 +187,9 @@ RJSFs amazing playground](https://rjsf-team.github.io/react-jsonschema-form/) </
         <di:waypoint x="530" y="177" />
         <di:waypoint x="590" y="177" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_16xczsm_di" bpmnElement="Flow_16xczsm">
+      <bpmndi:BPMNEdge id="Flow_1oou3ty_di" bpmnElement="Flow_1oou3ty">
         <di:waypoint x="690" y="177" />
-        <di:waypoint x="750" y="177" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1s8dhlh_di" bpmnElement="Flow_1s8dhlh">
-        <di:waypoint x="850" y="177" />
-        <di:waypoint x="912" y="177" />
+        <di:waypoint x="762" y="177" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

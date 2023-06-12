@@ -60,7 +60,9 @@ score = int(num_correct / 3 * 100)
         <spiffworkflow:instructionsForEndUser>Scripts are a way to inject short bits of python code into your process to modify data.  They can be extremely useful.   
 
 Because scripts can be easily mis-used, your SpiffWorkflow environment can be configured to run scripts within a Restricted Python context or even execute the scripts in a seperate environment.   In these cases you can't import additional libraries or modules.  But that is ok.  If you need to do more complex programming tasks then take a look at **Service Tasks** which allow you to call out to other independent applications through APIs.
-  </spiffworkflow:instructionsForEndUser>
+ 
+### Get Involved!
+Please get in touch with us!  We would love to help you build custom scripts into your workflows.  There is no end to what we can accomplish if we work together.  Please reach out to Dan at [dan@sartography.com](mailto:dan@sartography.com) to get started.</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1qoq1t3</bpmn:incoming>
     </bpmn:endEvent>

@@ -1,7 +1,7 @@
 {
     "admin": false,
-    "description": "You can loop back to a previous point in a diagram, or use MultiInstance tasks to repeat the same task multiple times.",
-    "display_name": "Loops",
+    "description": "COMING SOON - Many workflow engines are finite state machines, which do not handle looping back to previous points. SpiffWorkflow can do this, and handles it very well.",
+    "display_name": "Looping Back",
     "display_order": 50,
     "parent_groups": null
 }
