@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="site_admin_users_to_groups" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
+  <decision id="users_to_groups_dev" name="Users to Groups">
+    <decisionTable id="decisionTable_1" hitPolicy="COLLECT" biodi:annotationsWidth="400">
+      <input id="input_1" biodi:width="150">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>"*"</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0vrbi1j" label="users" typeRef="string" biodi:width="286" />
+      <output id="output_1" name="groups" typeRef="Any" biodi:width="262" />
+      <rule id="DecisionRule_1xwvp7b">
+        <description>Each line in this table assigns a user identifier (email) to a group. Please ensure that there are quotes around each entry.</description>
+        <inputEntry id="UnaryTests_01wus0h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18kwlie">
+          <text>"admin@spiffworkflow.org"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ykubgu">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1g8cuy5">
+        <inputEntry id="UnaryTests_0ds44h6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ql0vxm">
+          <text>"alex@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8ahi0">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a4f7in">
+        <inputEntry id="UnaryTests_1ocx2b2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_081j7ky">
+          <text>"dan@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10ya305">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mgkyjc">
+        <inputEntry id="UnaryTests_05jzhyr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wphfaa">
+          <text>"kevin@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f90zf3">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g54arh">
+        <inputEntry id="UnaryTests_0aszivj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x0ks64">
+          <text>"jason@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h02wd9">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ztuel9">
+        <inputEntry id="UnaryTests_1rmc4w4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0veljn1">
+          <text>"jon@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05tjw2b">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c4fqbv">
+        <inputEntry id="UnaryTests_04cx56v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rvd82i">
+          <text>"elizabeth@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0une672">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13q70i8">
+        <inputEntry id="UnaryTests_0zpfp21">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1em658s">
+          <text>"madhurya@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qgwbh8">
+          <text>"admin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kzhm6s">
+        <inputEntry id="UnaryTests_0uzuy6h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ilujqo">
+          <text>"usama@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09gs98z">
+          <text>"tech_writers"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15ihrsw">
+        <inputEntry id="UnaryTests_0ror9tf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12oe8h1">
+          <text>"phillana@sartography.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13d9xlf">
+          <text>"tech_writers"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bl9vz4">
+        <inputEntry id="UnaryTests_18b3yow">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0thtr5o">
+          <text>"daniel.h.funk@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lnhixf">
+          <text>"Dan"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="users_to_groups_dev">
+        <dc:Bounds height="80" width="180" x="157" y="81" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
