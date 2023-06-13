@@ -82,7 +82,7 @@
           <text>["all"]</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w6fmne">
-          <text>"PG:playground:Madhurya"</text>
+          <text>"PG:playground:madhurya"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ds11av">
@@ -97,7 +97,7 @@
           <text>["all"]</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0y1y3i7">
-          <text>"PG:playground:Dan"</text>
+          <text>"PG:playground:dan"</text>
         </outputEntry>
       </rule>
     </decisionTable>
