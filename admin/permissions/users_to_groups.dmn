@@ -131,6 +131,17 @@
           <text>"Dan"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ritrwu">
+        <inputEntry id="UnaryTests_0q4makb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10eqcna">
+          <text>"liyanagemadhurya@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l8mg7b">
+          <text>"Madhurya"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
