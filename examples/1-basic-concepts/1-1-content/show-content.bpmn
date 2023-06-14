@@ -9,11 +9,7 @@
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser>### What's Next?
 
-#### Try clicking on the tasks in the instance diagram below
-In the diagram below each Task is clickable.  When you click on a task, it will show you all the information available or created during that Tasks execution.  You can see that when this process started, there was no information, but when you completed the form it now knows your name and favorite color.   You can modify this data with python scripts, and display it in Markdown files.  
-
-#### Open the BPMN Editor
-Be sure to open up this diagram in edit mode, so you can see the properties panel.  To do this, click on "Displaying Content" in the Breadcrumbs above, then open the file "show-content.bpmn".  Then click on the manual tasks and will see they each have content in their "Instructions" in the properties panel on the right.  You can open these instructions in the markdown editor by clicking on the "Launch Editor" button which provides a great way to see how Markdown and Jinja can be used to create content.
+Open up this diagram in edit mode where you can move things around and view task properties, but you won't be able to save these demos.   To do this, click on "Displaying Content" in the Breadcrumbs above, then open the file "show-content.bpmn".  Click on the manual tasks and will see they each have content in their "Instructions" in the properties panel on the right.  You can open these instructions in the markdown editor by clicking on the "Launch Editor" button which provides a great way to see how Markdown and Jinja can be used to create content.
 
 #### Try it out! 
 Complete the "Request a Playground" task to get access to your own private area of this Demo SpiffWorkflow instance.  There you can build your own documentation! 
