@@ -48,7 +48,7 @@ The base price for your {{size}} Pizza is ${{base_price}}.
 
 Additional toppings for a {{size}} Pizza cost ${{cost_per_topping}}.
 
-The total cost of your pizza is ${{total cost}}.
+The total cost of your pizza is ${{total_cost}}.
 
 Thank you for your order! 
 
