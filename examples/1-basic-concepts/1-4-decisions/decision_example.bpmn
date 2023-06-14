@@ -44,16 +44,16 @@ Please get in touch with us!  We would love to help you define your business rul
         <spiffworkflow:instructionsForEndUser>
 ### Order Details
 
-The base price for your {{size}} Pizza is ${{base_price}}.
+The base price for your {{size}} Pizza is {{ "${:,.2f}".format(base_price) }}.
 
-Additional toppings for a {{size}} Pizza cost ${{cost_per_topping}}.
+Additional toppings for a {{size}} Pizza cost {{ "${:,.2f}".format(cost_per_topping) }}. 
 
-The total cost of your pizza is ${{total_cost}}.
+The total cost of your pizza is {{ "${:,.2f}".format(total_cost) }}. 
 
 Thank you for your order! 
 
-#### Calcuations
-We used a decision table to come up with the total costs.  Decision tables, in the simplest form are a series of conditions stated like **IF** this is true **THEN** this is the result.  You can open the file up by going to the Model and clicking on the pizza_prizes.dmn table.  But here is a sample of what it conatins:
+#### Calculations
+We used a decision table to come up with the total costs.  Decision tables, in the simplest form are a series of conditions stated like **IF** this is true **THEN** this is the result.  You can open the file up by going to the Model and clicking on the pizza_prizes.dmn table.  But here is a sample of what it contains:
 
 
 | when **Size** | then **base_price** | and **cost_per_topping** |
@@ -63,6 +63,7 @@ We used a decision table to come up with the total costs.  Decision tables, in t
 | "Large" | 16.00 | 2.00 |
 
 Decision tables are a great way to define a set of business requirements clearly and consistently, and in a way that is super easy to maintain over time.  </spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:preScript>total_cost = base_price + len(toppings) * cost_per_topping</spiffworkflow:preScript>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0e1e8hs</bpmn:incoming>
       <bpmn:outgoing>Flow_0ynedxh</bpmn:outgoing>
