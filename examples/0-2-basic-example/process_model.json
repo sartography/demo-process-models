@@ -1,6 +1,6 @@
 {
     "description": "A more complete BPMN Model that introduces a number of core concepts working together.",
-    "display_name": "Overview Example",
+    "display_name": "Basic Example",
     "exception_notification_addresses": [],
     "fault_or_suspend_on_exception": "fault",
     "metadata_extraction_paths": null,
