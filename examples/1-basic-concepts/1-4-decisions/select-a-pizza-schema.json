@@ -9,7 +9,7 @@
       "type": "string",
       "title": "Size",
       "enum": [
-        "Personnal",
+        "Personal",
         "Medium",
         "Large"
       ]
