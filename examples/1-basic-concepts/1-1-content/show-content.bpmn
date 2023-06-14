@@ -32,7 +32,7 @@ Please get in touch with us!  We would love to help you build beautiful document
 Markdown provides some minimal tools for formatting text.  It can handle basic formatting from **bold text** to headings, tables, lists, etc...  It is not the most expressive possible way of writing content, but it does help standardize your documentation and assure it can be easily updated by anyone else.   The [Markdown Guilde](https://www.markdownguide.org/getting-started/) provides excellent information on the standard, how to use it, and why it is useful.  
 
 ### 2. Jinja  
-As a workflow process runs, it collections information from many sources.  User Tasks collect information from Web Forms, Service Tasks can pull information from other applications - these are just two examples of many.  This data is collected and can be used in later tasks in the process.  One way to use the information is to display it, which is where Jinja comes into play.  While there is a lot that can be done in Jinja, you can go a very long way knowing one simple rule:
+As a workflow process runs, it collects information from many sources.  User Tasks collect information from Web Forms, Service Tasks can pull information from other applications - these are just two examples of many.  This data is collected and can be used in later tasks in the process.  One way to use the information is to display it, which is where Jinja comes into play.  While there is a lot that can be done in Jinja, you can go a very long way knowing one simple rule:
 
 &gt; Wrap variables you want to display in double curly brackets like this \{\{my_variable\}\}
 
