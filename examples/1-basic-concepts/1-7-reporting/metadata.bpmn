@@ -49,7 +49,7 @@ Follow these steps:
 
 1. Click on Process Instances in the top bar 
 2. Click the "Filter Options" button
-3. Select "Metadata - ...." in the Processes Dropdown.
+3. Select "Metadata - ...." in the Process Dropdown.
 4. In the "Columns" section, click the "+" button
 5. In the popup select "spam_thought" - no need to give a condition value at first.
 6. Click Save
