@@ -16,7 +16,6 @@
     },
     "toppings": {
       "type": "array",
-      "title": "Toppings",
       "items": {
         "type": "string",
         "enum": [
