@@ -64,16 +64,14 @@ Please get in touch with us!  We would love to help you as you orchestrate the f
         <spiffworkflow:instructionsForEndUser>
 You have likely run across Swim Lanes before - it is an elegant way to describe who is responsible for what. 
 
-This is a very simple example.  You will complete a form, and then, because the next task is in a different Lane, you will be informed that it is waiting on a different user and there is no more for you to do.
+This is a very simple example.  You will complete a form, and then, (because we assign you to the lane) you will be asked to approve it as well.  We do this so you **can** complete this process.  If we assigned the lane to someone else, you would not be able to make the approval and complete the process.  A very similar diagram powers the signup form for Request A Playground.  There you will see a message saying that the next task belongs to someone else.
 
-When you complete this form you will see the diagram that drives this process.  You will notice that there are two lanes, once that shows this introduction and a form, and another lane that belongs to an "admin".   So how do lanes get assigned to specific people?
+When you complete this form you will see the diagram that drives this process.  You will notice that there are two lanes, once that shows this introduction and a form, and another lane that belongs to an "approver".   So how do lanes get assigned to specific people?
 
 ### Lane assignment can be done in two ways. 
 
 #### Lane assignment with Groups
-SpiffWorkflow can be configured to read group information from your organization in a number of ways.  We will cover that topic in an Article on Integration later on.  If a lane name in your BPMN diagram matches the name of a user group, then it will allow any member of that group to complete the task.
-
-The example here uses **groups** - a small set of people are in the "admin" group, so this will assign this task to those users whenever you complete this form.
+SpiffWorkflow can be configured to read group information from your organization in a number of ways.  We will cover that topic in an article on Integration later on.  If a lane name in your BPMN diagram matches the name of a user group, then it will allow any member of that group to complete the task.
 
 #### Lane assignment with Task Data
  You can set it in the Task Data, via a script task or using a Decision Table.  For instance, a script task like the following:
@@ -84,6 +82,7 @@ lane_owners =
 ```
 Would assure that any lane labeled "Vacation Approver" in the current diagram will be assigned to the user with id "The Funkalicious Dan".   
 
+The example here uses this approach, it figures out who the current user is (that would be you), and assigns you the the "Vacation Approver" group.  You can see this happen in a script task when you open the the my_vacation.bpmn file from the Process Model page.
 
 
 
