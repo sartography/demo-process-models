@@ -73,7 +73,7 @@ When you complete this form you will see the diagram that drives this process.  
 #### Lane assignment with Groups
 SpiffWorkflow can be configured to read group information from your organization in a number of ways.  We will cover that topic in an Article on Integration later on.  If a lane name in your BPMN diagram matches the name of a user group, then it will allow any member of that group to complete the task.
 
-The example here users groups - a small set of people are in the "admin" group, so this will assign this task to those users whenever you complete this form.
+The example here uses **groups** - a small set of people are in the "admin" group, so this will assign this task to those users whenever you complete this form.
 
 #### Lane assignment with Task Data
  You can set it in the Task Data, via a script task or using a Decision Table.  For instance, a script task like the following:
