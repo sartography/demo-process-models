@@ -115,6 +115,21 @@
           <text>"PG:playground:dan"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16yjfua">
+        <description>Madhurya has all access to her playground,</description>
+        <inputEntry id="UnaryTests_009a9f7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_061s15l">
+          <text>"madhu"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oee3cg">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jnr2sw">
+          <text>"PG:playground:madhu"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
