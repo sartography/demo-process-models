@@ -16,8 +16,8 @@ You can open this diagram up in our editor where you can move things around, cli
 If you are interested in building your own diagrams, you can request access to a private "Playground" where you can build models and test out your own ideas.   We'll tell you more about this later. 
 
 ## Next Steps
-1. Check out the Basic Example under the Examples group to get a better sense of the expressiveness of the BPMN Modeling Language and what you can do with SpiffWorkflow.
-2. Open up the "1. Basics" Group for a set of additional examples that will introduce you to topics one at a time.
+1. Check out the [Essentials Example](https://spiffdemo.org/admin/process-models/examples:0-2-basic-example) under the Examples group to get a better sense of the expressiveness of the BPMN Modeling Language and what you can do with SpiffWorkflow.
+2. Open up the ["1. Basics" Group](https://spiffdemo.org/admin/process-groups/examples:1-basic-concepts) for a set of additional examples that will introduce you to topics one at a time.
 3. If you haven't already please check out our [Documentation for Spiff-Arena](https://spiff-arena.readthedocs.io/en/latest/quick_start/quick_start.html) which is a great way to get oriented so you can move through these examples with ease.</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0aw40yc</bpmn:incoming>
