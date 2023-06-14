@@ -106,6 +106,9 @@ You don't get to see a complete picture of Chuck, as he is disappointed in you. 
 
 This process model will use all of the concepts covered individually in the "Basics" Process Group (available under Process Models / Examples / 1. Basics).  It is worth viewing this early on to help paint a clearer picture of how components can be used together.  It is also worth revisiting after you look at the Basics Topics individually as you will have a fresh appreciation for how these individual components work, and you can better understand how they can be used together to powerful effect!
 
+&gt; NOTE:  As you step through this process - click on the "Process Instance Id: ##" in the breadcrumbs at the top of the page, and view the diagram.  You will see it is keeping track of where you are.  You can use the "Go" button to pick up where you left off.
+
+
 ## Next Steps
 1. Click 'Continue' below to step through this diagram. </spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
