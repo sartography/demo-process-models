@@ -104,14 +104,14 @@ Please get in touch with us!  We would love to help you as you orchestrate the f
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0y7oun0">
       <bpmndi:BPMNShape id="Participant_0sjjdhc_di" bpmnElement="Participant_0sjjdhc" isHorizontal="true">
-        <dc:Bounds x="340" y="70" width="1070" height="300" />
+        <dc:Bounds x="340" y="70" width="890" height="300" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_15s7af6_di" bpmnElement="Lane_15s7af6" isHorizontal="true">
-        <dc:Bounds x="370" y="220" width="1040" height="150" />
+        <dc:Bounds x="370" y="220" width="860" height="150" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0wgzewb_di" bpmnElement="Lane_0wgzewb" isHorizontal="true">
-        <dc:Bounds x="370" y="70" width="1040" height="150" />
+        <dc:Bounds x="370" y="70" width="860" height="150" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0axyuw7_di" bpmnElement="Activity_121gfc7">
         <dc:Bounds x="600" y="127" width="100" height="80" />
