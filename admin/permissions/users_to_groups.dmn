@@ -142,6 +142,17 @@
           <text>"Madhurya"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1d7c8fq">
+        <inputEntry id="UnaryTests_1y1foxr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04hsoe5">
+          <text>madhuryaatlink@gmail.com</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lxc45q">
+          <text>"madhu"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
