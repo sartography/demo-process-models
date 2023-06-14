@@ -83,7 +83,7 @@ Please get in touch with us!  We would love to help you integrate Web Forms into
       <bpmn:incoming>Flow_1oou3ty</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1oou3ty" sourceRef="Activity_1vh3soz" targetRef="Event_0f013r6" />
-    <bpmn:manualTask id="Activity_1vh3soz" name="Simple Form Explination">
+    <bpmn:manualTask id="Activity_1vh3soz" name="Simple Form Explanation">
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser>### The Code behind the last form
 
