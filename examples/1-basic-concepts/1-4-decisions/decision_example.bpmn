@@ -7,7 +7,9 @@
     <bpmn:sequenceFlow id="Flow_0brrubl" sourceRef="StartEvent_1" targetRef="Activity_1vwj16k" />
     <bpmn:endEvent id="Event_1fw7s4u">
       <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>Thanks for checking out our introduction to Decision Tables - this example was very simple, but you will find it is an excellent way to represent complex business rules in a way that is easy to think about and maintain.  Change your prices in once place - and then re-use that decision table everywhere you need it.  Future articles can show you how to expose this logic as an API endpoint -- imagine if your sales team had that kind of immediate control - and could stipulate A/B price splits based on arbitrary market segments and do this independently of your E-Commerce Web team, which just asks SpiffWorkflow's API what prices to show for a given person.
+        <spiffworkflow:instructionsForEndUser>Thanks for checking out our introduction to Decision Tables - this example was very simple, but you will find it is an excellent way to represent complex business rules simply and cleanly. 
+
+ Future articles can show you how to expose this logic as an API endpoint -- imagine if your sales team had that kind of immediate control - and could stipulate A/B price splits based on arbitrary market segments and do this independently of your E-Commerce Web team, which just asks SpiffWorkflow's API what prices to show for a given person.
 
 ### What's Next?
 
