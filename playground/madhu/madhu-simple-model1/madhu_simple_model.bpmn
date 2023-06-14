@@ -15,7 +15,7 @@
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1c283g2</bpmn:incoming>
       <bpmn:outgoing>Flow_0fattb7</bpmn:outgoing>
-      <bpmn:script>var x = 5;</bpmn:script>
+      <bpmn:script>x = 5;</bpmn:script>
     </bpmn:scriptTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
