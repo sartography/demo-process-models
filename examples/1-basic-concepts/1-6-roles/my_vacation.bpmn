@@ -11,7 +11,7 @@
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0cya923</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_15s7af6" name="approvers">
+      <bpmn:lane id="Lane_15s7af6" name="admin">
         <bpmn:flowNodeRef>Activity_041y60h</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
