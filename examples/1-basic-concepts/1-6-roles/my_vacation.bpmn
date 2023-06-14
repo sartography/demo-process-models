@@ -96,7 +96,7 @@ Please get in touch with us!  We would love to help you as you orchestrate the f
     <bpmn:scriptTask id="Activity_0tr6u2s" name="Assign current user to lane">
       <bpmn:incoming>Flow_12s1u1h</bpmn:incoming>
       <bpmn:outgoing>Flow_1c2wuo0</bpmn:outgoing>
-      <bpmn:script>user = get_current_user()
+      <bpmn:script>lane_owners = { "Vacation Approver": [get_current_user()['username']] }    
 </bpmn:script>
     </bpmn:scriptTask>
   </bpmn:process>
