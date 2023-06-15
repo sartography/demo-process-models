@@ -52,7 +52,7 @@ Let's complete a simple form so you can enter some information.  We'll also run 
       <bpmn:incoming>Flow_0r9coud</bpmn:incoming>
       <bpmn:outgoing>Flow_0796xeb</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_0wr8gfr" sourceRef="Activity_0pdnphi" targetRef="Activity_1jr7x9o" />
+    <bpmn:sequenceFlow id="Flow_0wr8gfr" sourceRef="Activity_0pdnphi" targetRef="Activity_0l7raxy" />
     <bpmn:sequenceFlow id="Flow_1thoqro" sourceRef="Activity_1jr7x9o" targetRef="Event_1wckt3w" />
     <bpmn:scriptTask id="Activity_0pdnphi" name="Create more content">
       <bpmn:extensionElements>
@@ -116,17 +116,40 @@ We also created a list of silly color names in a script task.  You should have s
 
 </spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0wr8gfr</bpmn:incoming>
+      <bpmn:incoming>Flow_0fdwa26</bpmn:incoming>
       <bpmn:outgoing>Flow_1thoqro</bpmn:outgoing>
     </bpmn:manualTask>
+    <bpmn:sequenceFlow id="Flow_1rgip89" sourceRef="Activity_0l7raxy" targetRef="Activity_0jfo38l" />
+    <bpmn:sequenceFlow id="Flow_0fdwa26" sourceRef="Activity_0jfo38l" targetRef="Activity_1jr7x9o" />
+    <bpmn:scriptTask id="Activity_0l7raxy" name="More processing">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>Making the colors more silly ...</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0wr8gfr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rgip89</bpmn:outgoing>
+      <bpmn:script>time.sleep(1)</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_0jfo38l" name="Even More Processing">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>Turning the silly level all the way up to 11, almost done ....</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1rgip89</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fdwa26</bpmn:outgoing>
+      <bpmn:script>time.sleep(2)</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:textAnnotation id="TextAnnotation_05wkdje">
+      <bpmn:text>These three script tasks would execute nearly instantly, we are forcing them to run slowly (asking python to go to sleep for a few seconds) to demonstrate long running background tasks, so you can see how to let your end users know what is going on when you are doing complex things in the background.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1cnnzc4" sourceRef="Activity_0l7raxy" targetRef="TextAnnotation_05wkdje" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_puxk39c">
+      <bpmndi:BPMNShape id="TextAnnotation_05wkdje_di" bpmnElement="TextAnnotation_05wkdje">
+        <dc:Bounds x="420" y="0" width="320" height="98" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="-38" y="159" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1wckt3w_di" bpmnElement="Event_1wckt3w">
-        <dc:Bounds x="652" y="159" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0rez9jv_di" bpmnElement="Activity_1f9v5wa">
         <dc:Bounds x="50" y="137" width="100" height="80" />
@@ -140,10 +163,25 @@ We also created a list of silly color names in a script task.  You should have s
         <dc:Bounds x="360" y="137" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1wckt3w_di" bpmnElement="Event_1wckt3w">
+        <dc:Bounds x="932" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0q99tkd_di" bpmnElement="Activity_1jr7x9o">
-        <dc:Bounds x="510" y="137" width="100" height="80" />
+        <dc:Bounds x="800" y="137" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_072c998_di" bpmnElement="Activity_0jfo38l">
+        <dc:Bounds x="650" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0e1jkdk_di" bpmnElement="Activity_0l7raxy">
+        <dc:Bounds x="500" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1cnnzc4_di" bpmnElement="Association_1cnnzc4">
+        <di:waypoint x="530" y="137" />
+        <di:waypoint x="511" y="98" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1wvtd9f_di" bpmnElement="Flow_1wvtd9f">
         <di:waypoint x="-2" y="177" />
         <di:waypoint x="50" y="177" />
@@ -158,11 +196,19 @@ We also created a list of silly color names in a script task.  You should have s
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0wr8gfr_di" bpmnElement="Flow_0wr8gfr">
         <di:waypoint x="460" y="177" />
-        <di:waypoint x="510" y="177" />
+        <di:waypoint x="500" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1thoqro_di" bpmnElement="Flow_1thoqro">
-        <di:waypoint x="610" y="177" />
-        <di:waypoint x="652" y="177" />
+        <di:waypoint x="900" y="177" />
+        <di:waypoint x="932" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rgip89_di" bpmnElement="Flow_1rgip89">
+        <di:waypoint x="600" y="177" />
+        <di:waypoint x="650" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fdwa26_di" bpmnElement="Flow_0fdwa26">
+        <di:waypoint x="750" y="177" />
+        <di:waypoint x="800" y="177" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

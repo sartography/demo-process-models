@@ -41,7 +41,10 @@ When this process is complete, go the "Process Instances" tab at the very top of
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser>Ok, now that you have answered the question at least once, you can see this in a report on the Process Instances Page. 
 
-When you create a Process Model (and when you edit it's properties later) you have the ability to specify pieces of the Task Data that you want to make available in reports later on.  You can end up with a lot of information when running a process - and if you have dozens or hundreds of processes you can have thousands of individual pieces of information.  Metadata allows you to say, that for this paticular process model about ducks, the salient bits of information are the "species" and the "quacks_per_minute".  You can tell SpiffWorkflow these pieces in paticular are important and it will save them (index them) in a way that is fast and efficient, so when you are searching for all processes you can include these two critical pieces in your reports!
+When you create a Process Model (and when you edit it's properties later) you have the ability to specify pieces of the Task Data that you want to make available in reports later on.
+You can end up with a lot of information when running a process - and if you have dozens or hundreds of processes you can have thousands of individual pieces of information.
+Metadata allows you to say, that for this paticular process model about ducks, the salient bits of information are the "species" and the "quacks_per_minute".
+You can tell SpiffWorkflow these pieces in paticular are important and it will save them (index them) in a way that is fast and efficient, so when you are searching for all processes you can include these two critical pieces in your reports!
 
 In this case, we are saving the critical bit of data called "spam_thoughts".  
 
