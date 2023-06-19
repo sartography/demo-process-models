@@ -153,6 +153,17 @@
           <text>"madhu"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_166pohv">
+        <inputEntry id="UnaryTests_0s91sc4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rjxnl2">
+          <text>"kokhoor@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lardzy">
+          <text>"benefit-solutions-pte-ltd"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
