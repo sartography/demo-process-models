@@ -86,9 +86,13 @@ Please get in touch with us!  We would love to help you as you orchestrate the f
           <spiffworkflow:property name="formJsonSchemaFilename" value="approve-vacation-request-schema.json" />
           <spiffworkflow:property name="formUiSchemaFilename" value="approve-vacation-request-uischema.json" />
         </spiffworkflow:properties>
-        <spiffworkflow:instructionsForEndUser>Please complete the form below to submit an approval request for the Vacation.
+        <spiffworkflow:instructionsForEndUser>Please complete the form below to approve or deny the vacation request.
 
-Requested By: {{}}</spiffworkflow:instructionsForEndUser>
+* **Requested By**: {requested_by}
+* **Location**: {location}
+* **Season**: {season}
+* **Activities**: {activites}
+</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1c2wuo0</bpmn:incoming>
       <bpmn:outgoing>Flow_0dsxo60</bpmn:outgoing>
@@ -98,7 +102,7 @@ Requested By: {{}}</spiffworkflow:instructionsForEndUser>
     <bpmn:scriptTask id="Activity_0tr6u2s" name="Assign current user to lane">
       <bpmn:incoming>Flow_12s1u1h</bpmn:incoming>
       <bpmn:outgoing>Flow_1c2wuo0</bpmn:outgoing>
-      <bpmn:script>requested_by = get_current_user()['username']]
+      <bpmn:script>requested_by = get_current_user()['username']
 lane_owners = { "Vacation Approver": [get_current_user()['username']] }    
 </bpmn:script>
     </bpmn:scriptTask>
