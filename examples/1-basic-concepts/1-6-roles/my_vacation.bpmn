@@ -88,10 +88,10 @@ Please get in touch with us!  We would love to help you as you orchestrate the f
         </spiffworkflow:properties>
         <spiffworkflow:instructionsForEndUser>Please complete the form below to approve or deny the vacation request.
 
-* **Requested By**: {requested_by}
-* **Location**: {location}
-* **Season**: {season}
-* **Activities**: {activites}
+* **Requested By**: {{requested_by}}
+* **Location**: {{location}}
+* **Season**: {{season}}
+* **Activities**: {{activites}}
 </spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1c2wuo0</bpmn:incoming>
