@@ -164,6 +164,18 @@
           <text>"benefit-solutions-pte-ltd"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_145unq8">
+        <inputEntry id="UnaryTests_0iycqfb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g1nkjk">
+          <text>"usama.ahmed95@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06a86wz">
+          <text>"usama"
+</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
