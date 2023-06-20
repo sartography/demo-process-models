@@ -160,6 +160,21 @@
           <text>"PG:playground:benefit-solutions-pte-ltd"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_082708y">
+        <description>Usama's playground.</description>
+        <inputEntry id="UnaryTests_03w5ap7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_179xpam">
+          <text>"usama"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08f21wp">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ibu3w7">
+          <text>"PG:playground:usama"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
