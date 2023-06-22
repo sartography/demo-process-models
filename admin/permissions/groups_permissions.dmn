@@ -175,6 +175,21 @@
           <text>"PG:playground:usama"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mm7yln">
+        <description>Daniel Requested a playground on 6/22/23</description>
+        <inputEntry id="UnaryTests_0agbdcb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ms2y7d">
+          <text>"daniel.luebke"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0buvsik">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18a2ph4">
+          <text>"PG:playground:daniel-luebke"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
