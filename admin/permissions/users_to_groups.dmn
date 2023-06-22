@@ -172,8 +172,18 @@
           <text>"usama.ahmed95@gmail.com"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06a86wz">
-          <text>"usama"
-</text>
+          <text>"usama"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bp1v7x">
+        <inputEntry id="UnaryTests_0zf82qz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w2snr6">
+          <text>"daniel.luebke@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hf4c9k">
+          <text>"daniel.luebke"</text>
         </outputEntry>
       </rule>
     </decisionTable>
