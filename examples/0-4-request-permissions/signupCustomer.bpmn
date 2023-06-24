@@ -94,7 +94,7 @@ We did not yet automate anything.  So please make sure you do all of the followi
       <bpmn:incoming>Flow_1m0dgi9</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:textAnnotation id="TextAnnotation_0z7s8uu">
-      <bpmn:text>Keeping this super simple for now, but in the future we will likely automate the creation of the playground the updating of permissions and notifying the requester.   As it stands this provides good examples of how to make a service call to post a message to Slack, and how lanes can be used to assign tasks to specific people and groups.</bpmn:text>
+      <bpmn:text>Keeping this super simple for now, but in the future we will likely automate the creation of the playground, the updating of permissions, and notifying the requester.   As it stands, this provides good examples of how to make a service call to post a message to Slack, and how lanes can be used to assign tasks to specific people and groups.</bpmn:text>
     </bpmn:textAnnotation>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -126,7 +126,7 @@ We did not yet automate anything.  So please make sure you do all of the followi
         <dc:Bounds x="742" y="437" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0z7s8uu_di" bpmnElement="TextAnnotation_0z7s8uu">
-        <dc:Bounds x="300" y="370" width="276" height="127" />
+        <dc:Bounds x="300" y="370" width="276" height="125" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1nohmyy_di" bpmnElement="Flow_1nohmyy">
