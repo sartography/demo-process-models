@@ -13,6 +13,7 @@
       <bpmn:extensionElements>
         <spiffworkflow:properties>
           <spiffworkflow:property name="formJsonSchemaFilename" value="todolist_schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="todolist_uischema.json" />
         </spiffworkflow:properties>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1cg97dk</bpmn:incoming>
