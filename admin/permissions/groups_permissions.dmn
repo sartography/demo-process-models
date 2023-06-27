@@ -70,21 +70,6 @@
           <text>"PG:examples"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ar3icc">
-        <description>Everyone should be able to request their process instances.</description>
-        <inputEntry id="UnaryTests_0ioh6vy">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_09kmego">
-          <text>"everybody"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0817gmp">
-          <text>["read"]</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0c178v2">
-          <text>"/v1.0/process-instances/for-me/*"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0582ofe">
         <description>People can see that there is a playground group.</description>
         <inputEntry id="UnaryTests_19grl9x">
