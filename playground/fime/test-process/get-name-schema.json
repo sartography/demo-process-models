@@ -2,7 +2,7 @@
   "title": "get name",
   "description": "",
   "properties": {
-    "what_is_your_name": {
+    "name": {
       "type": "string",
       "title": "What is your name?"
     }
