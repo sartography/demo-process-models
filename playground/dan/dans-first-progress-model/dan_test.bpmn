@@ -7,7 +7,13 @@
     <bpmn:sequenceFlow id="Flow_0fa6kbx" sourceRef="StartEvent_1" targetRef="Activity_0hy311a" />
     <bpmn:manualTask id="Activity_0hy311a" name="Show something">
       <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>Look Maw!  I made us a diagram for showin stuff! </spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:instructionsForEndUser>Look Maw!  I made us a diagram for showin stuff!  
+
+{{message}}</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:preScript>date_obj = datetime.utcnow()
+date_string = date_obj.strftime('%Y-%m-%d %I:%M:%S %p')
+message = f"Date of purchase {date_string}"
+</spiffworkflow:preScript>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0fa6kbx</bpmn:incoming>
       <bpmn:outgoing>Flow_1un3vxk</bpmn:outgoing>
