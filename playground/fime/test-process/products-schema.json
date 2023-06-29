@@ -1,0 +1,15 @@
+{
+  "title": "products",
+  "description": "",
+  "properties": {
+    "choose_a_product": {
+      "type": "string",
+      "title": "Choose a product"
+    },
+    "how_many": {
+      "type": "string",
+      "title": "How many?"
+    }
+  },
+  "required": []
+}
