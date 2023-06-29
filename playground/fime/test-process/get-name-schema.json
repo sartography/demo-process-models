@@ -1,6 +1,11 @@
 {
   "title": "get name",
   "description": "",
-  "properties": {},
+  "properties": {
+    "what_is_your_name": {
+      "type": "string",
+      "title": "What is your name?"
+    }
+  },
   "required": []
 }
