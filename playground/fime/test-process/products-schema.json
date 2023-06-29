@@ -2,11 +2,11 @@
   "title": "products",
   "description": "",
   "properties": {
-    "choose_a_product": {
+    "product_name": {
       "type": "string",
       "title": "Choose a product"
     },
-    "how_many": {
+    "product_quantity": {
       "type": "string",
       "title": "How many?"
     }
