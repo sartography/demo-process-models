@@ -74,27 +74,27 @@ print("\n -- Script task")
         <dc:Bounds x="220" y="190" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_0zbjeax_di" bpmnElement="Gateway_1dwq2wx">
-        <dc:Bounds x="425" y="205" width="50" height="50" />
+      <bpmndi:BPMNShape id="Event_08czeq5_di" bpmnElement="Event_08czeq5">
+        <dc:Bounds x="942" y="202" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1l5rli5_di" bpmnElement="Activity_04p0xwh">
-        <dc:Bounds x="400" y="290" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_10oyo6w_di" bpmnElement="Activity_0fqshiv">
+        <dc:Bounds x="400" y="90" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1qd3h3k_di" bpmnElement="Activity_1mbbo8t">
         <dc:Bounds x="600" y="180" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_10oyo6w_di" bpmnElement="Activity_0fqshiv">
-        <dc:Bounds x="400" y="90" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1de5w4c_di" bpmnElement="Activity_18othr1">
         <dc:Bounds x="760" y="180" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_08czeq5_di" bpmnElement="Event_08czeq5">
-        <dc:Bounds x="942" y="202" width="36" height="36" />
+      <bpmndi:BPMNShape id="Gateway_0zbjeax_di" bpmnElement="Gateway_1dwq2wx">
+        <dc:Bounds x="425" y="205" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1l5rli5_di" bpmnElement="Activity_04p0xwh">
+        <dc:Bounds x="400" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_07to06f_di" bpmnElement="Flow_07to06f">
         <di:waypoint x="168" y="230" />
