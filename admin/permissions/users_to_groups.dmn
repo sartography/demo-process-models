@@ -186,6 +186,17 @@
           <text>"daniel.luebke"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_08ns5ys">
+        <inputEntry id="UnaryTests_01uczwp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cn7kpb">
+          <text>"boulier.th@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sx9dyu">
+          <text>"fime"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
