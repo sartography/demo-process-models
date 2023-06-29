@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0roe1of" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="12.0.0">
+  <bpmn:process id="Process_04o1qwp" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_0w6pt9w">
+      <bpmn:outgoing>Flow_07to06f</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="Activity_0yx2126" name="Hello">
+      <bpmn:incoming>Flow_07to06f</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dz7222</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Event_08czeq5">
+      <bpmn:incoming>Flow_16k4jyj</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_07to06f" sourceRef="StartEvent_0w6pt9w" targetRef="Activity_0yx2126" />
+    <bpmn:sequenceFlow id="Flow_0dz7222" sourceRef="Activity_0yx2126" targetRef="Activity_0fqshiv" />
+    <bpmn:userTask id="Activity_0fqshiv" name="Input your name">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="select_product_and_quantity.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dz7222</bpmn:incoming>
+      <bpmn:outgoing>Flow_1bpyqjv</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1bpyqjv" sourceRef="Activity_0fqshiv" targetRef="Activity_1mbbo8t" />
+    <bpmn:sequenceFlow id="Flow_0sbo3r3" sourceRef="Activity_1mbbo8t" targetRef="Activity_18othr1" />
+    <bpmn:scriptTask id="Activity_1mbbo8t" name="Compute message">
+      <bpmn:incoming>Flow_1bpyqjv</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sbo3r3</bpmn:outgoing>
+      <bpmn:script>import datetime
+message = f"Date of purchase {datetime.date.today()}"
+print("\n -- Script task")
+      </bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:manualTask id="Activity_18othr1" name="Greet">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>Order Summary
+        {{ message }}
+        {{ product_name }}
+        Quantity: {{ product_quantity }}
+        </spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0sbo3r3</bpmn:incoming>
+      <bpmn:outgoing>Flow_16k4jyj</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:sequenceFlow id="Flow_16k4jyj" sourceRef="Activity_18othr1" targetRef="Event_08czeq5" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_04o1qwp">
+      <bpmndi:BPMNShape id="Activity_1w13fi1_di" bpmnElement="Activity_0yx2126">
+        <dc:Bounds x="260" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10oyo6w_di" bpmnElement="Activity_0fqshiv">
+        <dc:Bounds x="410" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1qd3h3k_di" bpmnElement="Activity_1mbbo8t">
+        <dc:Bounds x="550" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1de5w4c_di" bpmnElement="Activity_18othr1">
+        <dc:Bounds x="700" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_08czeq5_di" bpmnElement="Event_08czeq5">
+        <dc:Bounds x="842" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_0w6pt9w">
+        <dc:Bounds x="172" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_07to06f_di" bpmnElement="Flow_07to06f">
+        <di:waypoint x="208" y="120" />
+        <di:waypoint x="260" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dz7222_di" bpmnElement="Flow_0dz7222">
+        <di:waypoint x="360" y="120" />
+        <di:waypoint x="410" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bpyqjv_di" bpmnElement="Flow_1bpyqjv">
+        <di:waypoint x="510" y="120" />
+        <di:waypoint x="550" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sbo3r3_di" bpmnElement="Flow_0sbo3r3">
+        <di:waypoint x="650" y="120" />
+        <di:waypoint x="700" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16k4jyj_di" bpmnElement="Flow_16k4jyj">
+        <di:waypoint x="800" y="120" />
+        <di:waypoint x="842" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
