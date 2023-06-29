@@ -175,6 +175,21 @@
           <text>"PG:playground:daniel-luebke"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mtn6iu">
+        <description>Thomas Boulier of FIME requested on 6/29/23</description>
+        <inputEntry id="UnaryTests_0c4dypv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u0jx2p">
+          <text>"fime"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zo8vob">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zg508x">
+          <text>"PG:playground:fime"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
