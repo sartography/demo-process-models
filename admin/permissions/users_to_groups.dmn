@@ -197,6 +197,17 @@
           <text>"fime"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0vbjxey">
+        <inputEntry id="UnaryTests_0m6cgov">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17f8g4o">
+          <text>"timbuchot@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10ghme6">
+          <text>"fime"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
