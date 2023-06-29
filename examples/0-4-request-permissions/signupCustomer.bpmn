@@ -22,8 +22,8 @@
       <bpmn:extensionElements>
         <spiffworkflow:serviceTaskOperator id="slack/PostMessage" resultVariable="slack_result">
           <spiffworkflow:parameters>
-            <spiffworkflow:parameter id="channel" type="str" value="&#39;slack-connector-testing&#39;" />
-            <spiffworkflow:parameter id="message" type="str" value="&#39;New Demo Request from {current_user.id}.   Please visit the demo site at https://spiffdemo.org and look at tasks assigned to the Approver group.&#39;" />
+            <spiffworkflow:parameter id="channel" type="str" value="&#39;team&#39;" />
+            <spiffworkflow:parameter id="message" type="str" value="&#39;New Demo Request from {{current_user.id}}.   Please visit the demo site at https://spiffdemo.org and look at tasks assigned to the Approver group.&#39;" />
             <spiffworkflow:parameter id="token" type="str" value="&#39;secret:slack_token&#39;" />
           </spiffworkflow:parameters>
         </spiffworkflow:serviceTaskOperator>
