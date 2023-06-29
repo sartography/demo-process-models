@@ -1,0 +1,6 @@
+{
+  "ui:order": [
+    "choose_a_product",
+    "how_many"
+  ]
+}
