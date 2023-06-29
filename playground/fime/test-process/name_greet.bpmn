@@ -30,8 +30,8 @@
       <bpmn:incoming>Flow_14yu3cy</bpmn:incoming>
       <bpmn:outgoing>Flow_0sbo3r3</bpmn:outgoing>
       <bpmn:script>import datetime
-message = f"Date of purchase {datetime.date.today()}"
-print("\n -- Script task")
+message = f"Date of purchase {'date'.upper()}"
+print("\n -- Script task:", message)
 </bpmn:script>
     </bpmn:scriptTask>
     <bpmn:manualTask id="Activity_18othr1" name="Greet">
