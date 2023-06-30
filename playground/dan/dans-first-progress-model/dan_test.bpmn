@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
-  <bpmn:process id="Process_r9jzlqo" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1">
-      <bpmn:outgoing>Flow_0fa6kbx</bpmn:outgoing>
-    </bpmn:startEvent>
-    <bpmn:sequenceFlow id="Flow_0fa6kbx" sourceRef="StartEvent_1" targetRef="Activity_0hy311a" />
-    <bpmn:manualTask id="Activity_0hy311a" name="Show something">
-      <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>Look Maw!  I made us a diagram for showin stuff!  
-
-{{message}}</spiffworkflow:instructionsForEndUser>
-        <spiffworkflow:preScript>date_obj = datetime.utcnow()
-date_string = date_obj.strftime('%Y-%m-%d %I:%M:%S %p')
-message = f"Date of purchase {date_string}"
-</spiffworkflow:preScript>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0fa6kbx</bpmn:incoming>
-      <bpmn:outgoing>Flow_1un3vxk</bpmn:outgoing>
-    </bpmn:manualTask>
-    <bpmn:endEvent id="Event_1mzv2hp">
-      <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>All done showin stuff now.  Maybe show you all more later! </spiffworkflow:instructionsForEndUser>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1un3vxk</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_1un3vxk" sourceRef="Activity_0hy311a" targetRef="Event_1mzv2hp" />
-  </bpmn:process>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_r9jzlqo" isExecutable="true" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo">
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="179" y="159" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1vyvfrd_di" bpmnElement="Activity_0hy311a">
-        <dc:Bounds x="250" y="137" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1mzv2hp_di" bpmnElement="Event_1mzv2hp">
-        <dc:Bounds x="422" y="159" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_0fa6kbx_di" bpmnElement="Flow_0fa6kbx">
-        <di:waypoint x="215" y="177" />
-        <di:waypoint x="250" y="177" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1un3vxk_di" bpmnElement="Flow_1un3vxk">
-        <di:waypoint x="350" y="177" />
-        <di:waypoint x="422" y="177" />
-      </bpmndi:BPMNEdge>
-    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo" />
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
