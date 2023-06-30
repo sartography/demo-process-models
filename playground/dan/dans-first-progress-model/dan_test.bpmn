@@ -1,37 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
   <bpmn:process id="Process_r9jzlqo" isExecutable="true">
     <bpmn:startEvent id="Event_1dc2qzm">
       <bpmn:outgoing>Flow_0qkq7rc</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0qkq7rc" sourceRef="Event_1dc2qzm" targetRef="Activity_0z395t8" />
-    <bpmn:task id="Activity_09ctrxf">
-      <bpmn:incoming>Flow_08a6zoq</bpmn:incoming>
-      <bpmn:outgoing>Flow_0ikj9i1</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:sequenceFlow id="Flow_08a6zoq" sourceRef="Activity_0z395t8" targetRef="Activity_09ctrxf" />
     <bpmn:endEvent id="Event_0tyd3vr">
-      <bpmn:incoming>Flow_0ikj9i1</bpmn:incoming>
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>
+Thanks for completing our Spam Survey.
+According to our calculations, your quality of life is **{{quality_of_life}}**</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1nxucm1</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0ikj9i1" sourceRef="Activity_09ctrxf" targetRef="Event_0tyd3vr" />
+    <bpmn:sequenceFlow id="Flow_0ikj9i1" sourceRef="Activity_09ctrxf" targetRef="Activity_0qd1om0" />
     <bpmn:userTask id="Activity_0z395t8" name="Get Information from Dan">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="get-dans-data-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="get-dans-data-uischema.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_0qkq7rc</bpmn:incoming>
       <bpmn:outgoing>Flow_08a6zoq</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:scriptTask id="Activity_09ctrxf" name="Get Quality of Life">
+      <bpmn:incoming>Flow_08a6zoq</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ikj9i1</bpmn:outgoing>
+      <bpmn:script>total_cans = int(cans_of_spam)
+
+quality_of_life = "great"
+if total_cans &gt; 10:
+  quality_of_life = "viking level"
+if total_cans &gt; 5:
+  quality_of_life = "possibly not great"
+if total_Cans &lt; 1:
+  quality_of_life = "good, but missing something critical"
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_1nxucm1" sourceRef="Activity_0qd1om0" targetRef="Event_0tyd3vr" />
+    <bpmn:serviceTask id="Activity_0qd1om0" name="Send to slack">
+      <bpmn:extensionElements>
+        <spiffworkflow:serviceTaskOperator id="slack/PostMessage">
+          <spiffworkflow:parameters>
+            <spiffworkflow:parameter id="channel" type="str" value="&#34;slack-connector-testing&#34;" />
+            <spiffworkflow:parameter id="message" type="str" value="&#34;Doin the demo man, just doing the demo&#34;" />
+            <spiffworkflow:parameter id="token" type="str" value="&#34;secret:slack_token&#34;" />
+          </spiffworkflow:parameters>
+        </spiffworkflow:serviceTaskOperator>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ikj9i1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1nxucm1</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo">
       <bpmndi:BPMNShape id="Event_1dc2qzm_di" bpmnElement="Event_1dc2qzm">
         <dc:Bounds x="212" y="202" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_09ctrxf_di" bpmnElement="Activity_09ctrxf">
-        <dc:Bounds x="460" y="180" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0tyd3vr_di" bpmnElement="Event_0tyd3vr">
-        <dc:Bounds x="622" y="202" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_064ti0g_di" bpmnElement="Activity_0z395t8">
         <dc:Bounds x="300" y="180" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0tyd3vr_di" bpmnElement="Event_0tyd3vr">
+        <dc:Bounds x="712" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1vprvr1_di" bpmnElement="Activity_09ctrxf">
+        <dc:Bounds x="440" y="180" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1fd81aw_di" bpmnElement="Activity_0qd1om0">
+        <dc:Bounds x="580" y="180" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0qkq7rc_di" bpmnElement="Flow_0qkq7rc">
@@ -40,11 +80,15 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_08a6zoq_di" bpmnElement="Flow_08a6zoq">
         <di:waypoint x="400" y="220" />
-        <di:waypoint x="460" y="220" />
+        <di:waypoint x="440" y="220" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ikj9i1_di" bpmnElement="Flow_0ikj9i1">
-        <di:waypoint x="560" y="220" />
-        <di:waypoint x="622" y="220" />
+        <di:waypoint x="540" y="220" />
+        <di:waypoint x="580" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nxucm1_di" bpmnElement="Flow_1nxucm1">
+        <di:waypoint x="680" y="220" />
+        <di:waypoint x="712" y="220" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
