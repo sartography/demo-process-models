@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
   <bpmn:process id="Process_r9jzlqo" isExecutable="true">
     <bpmn:startEvent id="Event_02ivw9o">
       <bpmn:outgoing>Flow_1wkqxet</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_1wkqxet" sourceRef="Event_02ivw9o" targetRef="Activity_11c62g6" />
-    <bpmn:userTask id="Activity_11c62g6">
+    <bpmn:userTask id="Activity_11c62g6" name="About Spam">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="about-spam-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="about-spam-uischema.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_1wkqxet</bpmn:incoming>
+      <bpmn:outgoing>Flow_1s1b3rt</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1s1b3rt" sourceRef="Activity_11c62g6" targetRef="Activity_0mk6l2h" />
+    <bpmn:scriptTask id="Activity_0mk6l2h" name="calculate QOL">
+      <bpmn:incoming>Flow_1s1b3rt</bpmn:incoming>
+      <bpmn:outgoing>Flow_03a0y56</bpmn:outgoing>
+      <bpmn:script>cans = int(cans_of_spam)
+
+qol = "Great"
+if cans &gt; 10:
+    qol = "Viking Level"
+elif cans &lt; 1:
+    qol = "Good, but missing something"</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_03a0y56" sourceRef="Activity_0mk6l2h" targetRef="Activity_0tx78fw" />
+    <bpmn:serviceTask id="Activity_0tx78fw">
+      <bpmn:extensionElements>
+        <spiffworkflow:serviceTaskOperator id="slack/PostMessage">
+          <spiffworkflow:parameters>
+            <spiffworkflow:parameter id="channel" type="str" value="&#34;slack-connector-testing&#34;" />
+            <spiffworkflow:parameter id="message" type="str" value="&#34;Yo man, you do great video things&#34;" />
+            <spiffworkflow:parameter id="token" type="str" value="&#34;secret:slack_token&#34;" />
+          </spiffworkflow:parameters>
+        </spiffworkflow:serviceTaskOperator>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_03a0y56</bpmn:incoming>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo">
@@ -16,10 +48,26 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1fjjd8o_di" bpmnElement="Activity_11c62g6">
         <dc:Bounds x="380" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02f8tbv_di" bpmnElement="Activity_0mk6l2h">
+        <dc:Bounds x="540" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rjfe2o_di" bpmnElement="Activity_0tx78fw">
+        <dc:Bounds x="700" y="210" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1wkqxet_di" bpmnElement="Flow_1wkqxet">
         <di:waypoint x="328" y="250" />
         <di:waypoint x="380" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1s1b3rt_di" bpmnElement="Flow_1s1b3rt">
+        <di:waypoint x="480" y="250" />
+        <di:waypoint x="540" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03a0y56_di" bpmnElement="Flow_03a0y56">
+        <di:waypoint x="640" y="250" />
+        <di:waypoint x="700" y="250" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
