@@ -1,0 +1,11 @@
+{
+  "title": "Get Dan's Data",
+  "description": "",
+  "properties": {
+    "how_may_cans_of_spam_did_you_eat_this_week": {
+      "type": "string",
+      "title": "How may can's of spam did you eat this week?"
+    }
+  },
+  "required": []
+}
