@@ -6,10 +6,6 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_14ceqiv" sourceRef="Event_0ysbctu" targetRef="Activity_1o4y7c9" />
     <bpmn:sequenceFlow id="Flow_1v2mj1p" sourceRef="Activity_1o4y7c9" targetRef="Activity_1nz7u56" />
-    <bpmn:task id="Activity_08uth9b">
-      <bpmn:incoming>Flow_0j6gxij</bpmn:incoming>
-      <bpmn:outgoing>Flow_1mzybto</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0j6gxij" sourceRef="Activity_1nz7u56" targetRef="Activity_08uth9b" />
     <bpmn:endEvent id="Event_1aq8ll6">
       <bpmn:incoming>Flow_1mzybto</bpmn:incoming>
@@ -25,12 +21,16 @@
       <bpmn:incoming>Flow_14ceqiv</bpmn:incoming>
       <bpmn:outgoing>Flow_1v2mj1p</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:scriptTask id="Activity_1nz7u56">
+    <bpmn:scriptTask id="Activity_1nz7u56" name="calculate quality of life">
       <bpmn:extensionElements>
         <spiffworkflow:unitTests>
           <spiffworkflow:unitTest id="ScriptUnitTest_110edu5">
-            <spiffworkflow:inputJson>{}</spiffworkflow:inputJson>
-            <spiffworkflow:expectedOutputJson>{}</spiffworkflow:expectedOutputJson>
+            <spiffworkflow:inputJson>{"cans_of_spam": "10"}</spiffworkflow:inputJson>
+            <spiffworkflow:expectedOutputJson>{
+  "cans": 10,
+  "cans_of_spam": "10",
+  "qol": "not bloody great"
+}</spiffworkflow:expectedOutputJson>
           </spiffworkflow:unitTest>
         </spiffworkflow:unitTests>
       </bpmn:extensionElements>
@@ -40,21 +40,31 @@
 
 if cans &gt; 10:
   qol = "viking like"
-else if cans &gt; 5:
+elif cans &gt; 5:
   qol = "not bloody great"
-else if cans &gt; 1:
+elif cans &gt; 1:
   qol = "very high indeed"
 else:
   qol = "you are missing out on something important"</bpmn:script>
     </bpmn:scriptTask>
+    <bpmn:serviceTask id="Activity_08uth9b">
+      <bpmn:extensionElements>
+        <spiffworkflow:serviceTaskOperator id="slack/PostMessage">
+          <spiffworkflow:parameters>
+            <spiffworkflow:parameter id="channel" type="str" value="&#34;slack-connector-testing&#34;" />
+            <spiffworkflow:parameter id="message" type="str" value="&#34;Yo man, this demo is great!&#34;" />
+            <spiffworkflow:parameter id="token" type="str" value="&#34;secret:slack_token&#34;" />
+          </spiffworkflow:parameters>
+        </spiffworkflow:serviceTaskOperator>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0j6gxij</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mzybto</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo">
       <bpmndi:BPMNShape id="Event_0ysbctu_di" bpmnElement="Event_0ysbctu">
         <dc:Bounds x="182" y="182" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_08uth9b_di" bpmnElement="Activity_08uth9b">
-        <dc:Bounds x="590" y="160" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1aq8ll6_di" bpmnElement="Event_1aq8ll6">
         <dc:Bounds x="752" y="182" width="36" height="36" />
@@ -65,6 +75,10 @@ else:
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0zi6gzs_di" bpmnElement="Activity_1nz7u56">
         <dc:Bounds x="430" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1esyqnj_di" bpmnElement="Activity_08uth9b">
+        <dc:Bounds x="590" y="160" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_14ceqiv_di" bpmnElement="Flow_14ceqiv">
         <di:waypoint x="218" y="200" />
