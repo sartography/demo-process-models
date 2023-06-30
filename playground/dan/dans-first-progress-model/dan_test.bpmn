@@ -28,7 +28,7 @@ elif cans &lt; 1:
     qol = "Good, but missing something"</bpmn:script>
     </bpmn:scriptTask>
     <bpmn:sequenceFlow id="Flow_03a0y56" sourceRef="Activity_0mk6l2h" targetRef="Activity_0tx78fw" />
-    <bpmn:serviceTask id="Activity_0tx78fw">
+    <bpmn:serviceTask id="Activity_0tx78fw" name="send to slack">
       <bpmn:extensionElements>
         <spiffworkflow:serviceTaskOperator id="slack/PostMessage">
           <spiffworkflow:parameters>
@@ -39,7 +39,17 @@ elif cans &lt; 1:
         </spiffworkflow:serviceTaskOperator>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_03a0y56</bpmn:incoming>
+      <bpmn:outgoing>Flow_0rffold</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1gmt850">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser># Good Job
+
+We decided after careful consderation that your Quality of life is **{{qol}}**</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0rffold</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0rffold" sourceRef="Activity_0tx78fw" targetRef="Event_1gmt850" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_r9jzlqo">
@@ -56,6 +66,10 @@ elif cans &lt; 1:
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0rjfe2o_di" bpmnElement="Activity_0tx78fw">
         <dc:Bounds x="700" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1gmt850_di" bpmnElement="Event_1gmt850">
+        <dc:Bounds x="862" y="232" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1wkqxet_di" bpmnElement="Flow_1wkqxet">
         <di:waypoint x="328" y="250" />
@@ -68,6 +82,10 @@ elif cans &lt; 1:
       <bpmndi:BPMNEdge id="Flow_03a0y56_di" bpmnElement="Flow_03a0y56">
         <di:waypoint x="640" y="250" />
         <di:waypoint x="700" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0rffold_di" bpmnElement="Flow_0rffold">
+        <di:waypoint x="800" y="250" />
+        <di:waypoint x="862" y="250" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
