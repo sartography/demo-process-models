@@ -1,0 +1,11 @@
+{
+  "title": "About Spam",
+  "description": "",
+  "properties": {
+    "cans_of_spam": {
+      "type": "string",
+      "title": "How many cans of Spam do you eat in a week?"
+    }
+  },
+  "required": []
+}
