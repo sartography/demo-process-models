@@ -208,6 +208,17 @@
           <text>"fime"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0xqb72h">
+        <inputEntry id="UnaryTests_08hqlbe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d35ez8">
+          <text>"dbayless"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a13kng">
+          <text>"human-scale-business"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
