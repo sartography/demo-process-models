@@ -190,6 +190,21 @@
           <text>"PG:playground:fime"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0k54vlb">
+        <description>David Bayless of Human Scale Business on 7/2/23</description>
+        <inputEntry id="UnaryTests_1ta97ss">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vdpnti">
+          <text>"human-scale-business"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11j52k9">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_128f5f3">
+          <text>"PG:playground:human-scale-business"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
