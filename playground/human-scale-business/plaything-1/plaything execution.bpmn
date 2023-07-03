@@ -24,8 +24,19 @@ The instructional text is created using markdown. That means it has the usual fo
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_05pcm1s" sourceRef="Activity_1uqmxqo" targetRef="Activity_0e2xanh" />
     <bpmn:scriptTask id="Activity_0e2xanh" name="Perform a script task">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser># Execution Message
+This is the text that is shown when the script task is being executed.</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_05pcm1s</bpmn:incoming>
+      <bpmn:outgoing>Flow_1t5222g</bpmn:outgoing>
+      <bpmn:script>first_name = input(f'Enter your first name: ')
+print(f'Hello, {first_name}!')</bpmn:script>
     </bpmn:scriptTask>
+    <bpmn:endEvent id="Event_05b7qhb">
+      <bpmn:incoming>Flow_1t5222g</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1t5222g" sourceRef="Activity_0e2xanh" targetRef="Event_05b7qhb" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_xirmak2">
@@ -40,6 +51,9 @@ The instructional text is created using markdown. That means it has the usual fo
         <dc:Bounds x="470" y="200" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_05b7qhb_di" bpmnElement="Event_05b7qhb">
+        <dc:Bounds x="632" y="222" width="36" height="36" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_04lyvz8_di" bpmnElement="Flow_04lyvz8">
         <di:waypoint x="258" y="240" />
         <di:waypoint x="310" y="240" />
@@ -47,6 +61,10 @@ The instructional text is created using markdown. That means it has the usual fo
       <bpmndi:BPMNEdge id="Flow_05pcm1s_di" bpmnElement="Flow_05pcm1s">
         <di:waypoint x="410" y="240" />
         <di:waypoint x="470" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1t5222g_di" bpmnElement="Flow_1t5222g">
+        <di:waypoint x="570" y="240" />
+        <di:waypoint x="632" y="240" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
