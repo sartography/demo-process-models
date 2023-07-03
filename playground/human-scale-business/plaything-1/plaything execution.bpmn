@@ -24,6 +24,7 @@ The instructional text is created using markdown. That means it has the usual fo
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_05pcm1s" sourceRef="Activity_1uqmxqo" targetRef="Activity_0e2xanh" />
     <bpmn:scriptTask id="Activity_0e2xanh" name="Perform a script task">
+      <bpmn:documentation>This appears to be a place for internal documentation (as compared to the user-facing instructions).</bpmn:documentation>
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser># Execution Message
 This is the text that is shown when the script task is being executed.</spiffworkflow:instructionsForEndUser>
