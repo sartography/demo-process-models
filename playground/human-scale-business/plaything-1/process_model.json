@@ -1,0 +1,11 @@
+{
+    "description": "Just fooling around.",
+    "display_name": "Plaything 1",
+    "exception_notification_addresses": [
+        "dbayless@humanscalebusiness.org"
+    ],
+    "fault_or_suspend_on_exception": "fault",
+    "metadata_extraction_paths": null,
+    "primary_file_name": null,
+    "primary_process_id": null
+}
