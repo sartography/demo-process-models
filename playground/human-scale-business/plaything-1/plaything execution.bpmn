@@ -18,6 +18,10 @@ The instructional text is created using markdown. That means it has the usual fo
 - Code
 
 `code` format.</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="name-input-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="name-input-uischema.json" />
+        </spiffworkflow:properties>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_04lyvz8</bpmn:incoming>
       <bpmn:outgoing>Flow_05pcm1s</bpmn:outgoing>
