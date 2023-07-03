@@ -1,6 +1,11 @@
 {
   "title": "Name Input",
   "description": "The user is prompted to enter their first name here.",
-  "properties": {},
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "title": "first_name"
+    }
+  },
   "required": []
 }
