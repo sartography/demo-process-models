@@ -5,7 +5,7 @@
       <bpmn:outgoing>Flow_04lyvz8</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_04lyvz8" sourceRef="StartEvent_1" targetRef="Activity_1uqmxqo" />
-    <bpmn:userTask id="Activity_1uqmxqo" name="Read the instructions">
+    <bpmn:userTask id="Activity_1uqmxqo" name="Enter name">
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser># Instructions
 This is a manual task. In SpiffWorkflow, that means providing instructions or other information to the user, who must perform a task manually. That is, the task needs to be completed outside of SpiffWorkflow.
@@ -31,8 +31,7 @@ This is the text that is shown when the script task is being executed.</spiffwor
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_05pcm1s</bpmn:incoming>
       <bpmn:outgoing>Flow_1t5222g</bpmn:outgoing>
-      <bpmn:script>first_name = input(f'Enter your first name: ')
-print(f'Hello, {first_name}!')</bpmn:script>
+      <bpmn:script>print(f'Hello, {first_name}!')</bpmn:script>
     </bpmn:scriptTask>
     <bpmn:endEvent id="Event_05b7qhb">
       <bpmn:incoming>Flow_1t5222g</bpmn:incoming>
