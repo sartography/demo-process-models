@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
   <bpmn:collaboration id="Collaboration_041kf0k">
-    <bpmn:participant id="Participant_10h6jp2" processRef="Process_yxvxjyy" />
+    <bpmn:participant id="Participant_10h6jp2" name="User" processRef="Process_yxvxjyy" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_yxvxjyy" isExecutable="true">
+  <bpmn:process id="Process_yxvxjyy" name="Certification" isExecutable="true">
     <bpmn:laneSet id="LaneSet_1ffgjq6" />
-    <bpmn:startEvent id="StartEvent_1">
-      <bpmn:outgoing>Flow_0k3jkas</bpmn:outgoing>
-    </bpmn:startEvent>
-    <bpmn:exclusiveGateway id="Gateway_0vnmsmm" default="Flow_15ekxoi">
-      <bpmn:incoming>Flow_0mhfxdp</bpmn:incoming>
-      <bpmn:outgoing>Flow_15ekxoi</bpmn:outgoing>
-      <bpmn:outgoing>Flow_0ei1djd</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Activity_1aa8il0" name="Fill ICS">
-      <bpmn:extensionElements>
-        <spiffworkflow:properties>
-          <spiffworkflow:property name="formJsonSchemaFilename" value="fill-ics-mock-schema.json" />
-          <spiffworkflow:property name="formUiSchemaFilename" value="fill-ics-mock-uischema.json" />
-        </spiffworkflow:properties>
-        <spiffworkflow:instructionsForEndUser />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0k3jkas</bpmn:incoming>
-      <bpmn:incoming>Flow_15ekxoi</bpmn:incoming>
-      <bpmn:outgoing>Flow_0asurpr</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_0k3jkas" sourceRef="StartEvent_1" targetRef="Activity_1aa8il0" />
-    <bpmn:sequenceFlow id="Flow_0mhfxdp" sourceRef="Activity_1sy28s9" targetRef="Gateway_0vnmsmm" />
-    <bpmn:sequenceFlow id="Flow_15ekxoi" sourceRef="Gateway_0vnmsmm" targetRef="Activity_1aa8il0" />
-    <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Event_0pdfqt0">
-      <bpmn:conditionExpression>is_ics_valide==yes</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_0asurpr" sourceRef="Activity_1aa8il0" targetRef="Activity_1sy28s9" />
-    <bpmn:endEvent id="Event_0pdfqt0">
-      <bpmn:incoming>Flow_0ei1djd</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:userTask id="Activity_1sy28s9" name="Validate ICS">
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser>Result of the ICS:
@@ -45,52 +15,83 @@
       <bpmn:incoming>Flow_0asurpr</bpmn:incoming>
       <bpmn:outgoing>Flow_0mhfxdp</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:endEvent id="Event_0pdfqt0">
+      <bpmn:incoming>Flow_0ei1djd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_1aa8il0" name="Fill ICS">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="fill-ics-mock-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="fill-ics-mock-uischema.json" />
+        </spiffworkflow:properties>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_15ekxoi</bpmn:incoming>
+      <bpmn:incoming>Flow_0k3jkas</bpmn:incoming>
+      <bpmn:outgoing>Flow_0asurpr</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0asurpr" sourceRef="Activity_1aa8il0" targetRef="Activity_1sy28s9" />
+    <bpmn:exclusiveGateway id="Gateway_0vnmsmm" default="Flow_15ekxoi">
+      <bpmn:incoming>Flow_0mhfxdp</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ei1djd</bpmn:outgoing>
+      <bpmn:outgoing>Flow_15ekxoi</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Event_0pdfqt0">
+      <bpmn:conditionExpression>is_ics_valide==yes</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_15ekxoi" sourceRef="Gateway_0vnmsmm" targetRef="Activity_1aa8il0" />
+    <bpmn:sequenceFlow id="Flow_0mhfxdp" sourceRef="Activity_1sy28s9" targetRef="Gateway_0vnmsmm" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0k3jkas</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0k3jkas" sourceRef="StartEvent_1" targetRef="Activity_1aa8il0" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_041kf0k">
       <bpmndi:BPMNShape id="Participant_10h6jp2_di" bpmnElement="Participant_10h6jp2" isHorizontal="true">
-        <dc:Bounds x="-20" y="20" width="1010" height="543" />
+        <dc:Bounds x="90" y="0" width="1010" height="543" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="32" y="159" width="36" height="36" />
+        <dc:Bounds x="142" y="139" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0vnmsmm_di" bpmnElement="Gateway_0vnmsmm" isMarkerVisible="true">
-        <dc:Bounds x="475" y="152" width="50" height="50" />
+        <dc:Bounds x="585" y="132" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0ne53bk_di" bpmnElement="Activity_1aa8il0">
-        <dc:Bounds x="120" y="137" width="100" height="80" />
+        <dc:Bounds x="230" y="117" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0pdfqt0_di" bpmnElement="Event_0pdfqt0">
-        <dc:Bounds x="922" y="159" width="36" height="36" />
+        <dc:Bounds x="1032" y="139" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_10sn738_di" bpmnElement="Activity_1sy28s9">
-        <dc:Bounds x="320" y="390" width="100" height="80" />
+        <dc:Bounds x="430" y="370" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0k3jkas_di" bpmnElement="Flow_0k3jkas">
-        <di:waypoint x="68" y="177" />
-        <di:waypoint x="120" y="177" />
+        <di:waypoint x="178" y="157" />
+        <di:waypoint x="230" y="157" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0mhfxdp_di" bpmnElement="Flow_0mhfxdp">
-        <di:waypoint x="420" y="430" />
-        <di:waypoint x="500" y="430" />
-        <di:waypoint x="500" y="202" />
+        <di:waypoint x="530" y="410" />
+        <di:waypoint x="610" y="410" />
+        <di:waypoint x="610" y="182" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15ekxoi_di" bpmnElement="Flow_15ekxoi">
-        <di:waypoint x="500" y="152" />
-        <di:waypoint x="500" y="80" />
-        <di:waypoint x="170" y="80" />
-        <di:waypoint x="170" y="137" />
+        <di:waypoint x="610" y="132" />
+        <di:waypoint x="610" y="60" />
+        <di:waypoint x="280" y="60" />
+        <di:waypoint x="280" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ei1djd_di" bpmnElement="Flow_0ei1djd">
-        <di:waypoint x="525" y="177" />
-        <di:waypoint x="922" y="177" />
+        <di:waypoint x="635" y="157" />
+        <di:waypoint x="1032" y="157" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0asurpr_di" bpmnElement="Flow_0asurpr">
-        <di:waypoint x="220" y="177" />
-        <di:waypoint x="270" y="177" />
-        <di:waypoint x="270" y="430" />
-        <di:waypoint x="320" y="430" />
+        <di:waypoint x="330" y="157" />
+        <di:waypoint x="380" y="157" />
+        <di:waypoint x="380" y="410" />
+        <di:waypoint x="430" y="410" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
