@@ -66,6 +66,19 @@
       <bpmn:incoming>Flow_0ei1djd</bpmn:incoming>
       <bpmn:outgoing>Flow_1wo35va</bpmn:outgoing>
     </bpmn:manualTask>
+    <bpmn:serviceTask id="Activity_07lbvfd" name="Test Service">
+      <bpmn:extensionElements>
+        <spiffworkflow:serviceTaskOperator id="http/PostRequest">
+          <spiffworkflow:parameters>
+            <spiffworkflow:parameter id="basic_auth_password" type="str" />
+            <spiffworkflow:parameter id="basic_auth_username" type="str" />
+            <spiffworkflow:parameter id="data" type="any" />
+            <spiffworkflow:parameter id="headers" type="any" />
+            <spiffworkflow:parameter id="url" type="str" />
+          </spiffworkflow:parameters>
+        </spiffworkflow:serviceTaskOperator>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_yxvxjyy">
@@ -82,6 +95,15 @@
       <bpmndi:BPMNShape id="Gateway_0vnmsmm_di" bpmnElement="Gateway_0vnmsmm" isMarkerVisible="true">
         <dc:Bounds x="585" y="132" width="50" height="50" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="-8" y="139" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_085fvqg_di" bpmnElement="Event_085fvqg">
+        <dc:Bounds x="122" y="139" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="128" y="182" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1oorh5j_di" bpmnElement="Event_1oorh5j">
         <dc:Bounds x="412" y="139" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -92,14 +114,9 @@
         <dc:Bounds x="820" y="117" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_085fvqg_di" bpmnElement="Event_085fvqg">
-        <dc:Bounds x="122" y="139" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="128" y="182" width="24" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="-8" y="139" width="36" height="36" />
+      <bpmndi:BPMNShape id="Activity_0fapqo4_di" bpmnElement="Activity_07lbvfd">
+        <dc:Bounds x="670" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0asurpr_di" bpmnElement="Flow_0asurpr">
         <di:waypoint x="330" y="157" />
