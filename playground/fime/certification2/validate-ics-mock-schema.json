@@ -1,0 +1,15 @@
+{
+  "title": "validate ics mock",
+  "description": "",
+  "properties": {
+    "is_the_ics_valide": {
+      "type": "string",
+      "title": "Is the ICS valide?",
+      "enum": [
+        "yes",
+        "no"
+      ]
+    }
+  },
+  "required": []
+}
