@@ -1,0 +1,23 @@
+{
+  "title": "Fill ICS",
+  "description": "Please fill your ICS",
+  "properties": {
+    "question1": {
+      "type": "string",
+      "title": "question1",
+      "enum": [
+        "option1",
+        "option2"
+      ]
+    },
+    "question2": {
+      "type": "string",
+      "title": "question2"
+    },
+    "question3": {
+      "type": "boolean",
+      "title": "question3"
+    }
+  },
+  "required": []
+}
