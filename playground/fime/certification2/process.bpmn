@@ -7,6 +7,10 @@
 {{ question1 }}
 {{ question2 }}
 {{ question3 }}</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="validate-ics-mock-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="validate-ics-mock-uischema.json" />
+        </spiffworkflow:properties>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_02prgf9</bpmn:incoming>
       <bpmn:outgoing>Flow_0mhfxdp</bpmn:outgoing>
@@ -54,6 +58,9 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_yxvxjyy">
+      <bpmndi:BPMNShape id="Activity_10sn738_di" bpmnElement="Activity_1sy28s9">
+        <dc:Bounds x="380" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0pdfqt0_di" bpmnElement="Event_0pdfqt0">
         <dc:Bounds x="1032" y="139" width="36" height="36" />
       </bpmndi:BPMNShape>
@@ -63,9 +70,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0vnmsmm_di" bpmnElement="Gateway_0vnmsmm" isMarkerVisible="true">
         <dc:Bounds x="585" y="132" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_10sn738_di" bpmnElement="Activity_1sy28s9">
-        <dc:Bounds x="380" y="290" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="-88" y="139" width="36" height="36" />
