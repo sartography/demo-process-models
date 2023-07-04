@@ -4,9 +4,12 @@
     <bpmn:userTask id="Activity_1sy28s9" name="Validate ICS">
       <bpmn:extensionElements>
         <spiffworkflow:instructionsForEndUser>Result of the ICS:
-{{ question1 }}
-{{ question2 }}
-{{ question3 }}</spiffworkflow:instructionsForEndUser>
+
+- Question 1: {{ question1 }}
+
+- Question 2: {{ question2 }}
+
+- Question 3: {{ question3 }}</spiffworkflow:instructionsForEndUser>
         <spiffworkflow:properties>
           <spiffworkflow:property name="formJsonSchemaFilename" value="validate-ics-mock-schema.json" />
           <spiffworkflow:property name="formUiSchemaFilename" value="validate-ics-mock-uischema.json" />
@@ -37,7 +40,7 @@
       <bpmn:outgoing>Flow_15ekxoi</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Event_0pdfqt0">
-      <bpmn:conditionExpression>is_the_ics_valide==yes</bpmn:conditionExpression>
+      <bpmn:conditionExpression>is_the_ics_valide=="yes"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15ekxoi" sourceRef="Gateway_0vnmsmm" targetRef="Activity_1aa8il0" />
     <bpmn:sequenceFlow id="Flow_0mhfxdp" sourceRef="Activity_1sy28s9" targetRef="Gateway_0vnmsmm" />
