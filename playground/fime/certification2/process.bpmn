@@ -75,7 +75,7 @@
             <spiffworkflow:parameter id="basic_auth_username" type="str" />
             <spiffworkflow:parameter id="headers" type="any" />
             <spiffworkflow:parameter id="params" type="any" />
-            <spiffworkflow:parameter id="url" type="str" value="http://google.com" />
+            <spiffworkflow:parameter id="url" type="str" value="&#34;http://google.com&#34;" />
           </spiffworkflow:parameters>
         </spiffworkflow:serviceTaskOperator>
       </bpmn:extensionElements>
