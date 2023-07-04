@@ -39,7 +39,7 @@
       <bpmn:outgoing>Flow_0ei1djd</bpmn:outgoing>
       <bpmn:outgoing>Flow_15ekxoi</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Activity_160ktzs">
+    <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Activity_07lbvfd">
       <bpmn:conditionExpression>is_the_ics_valide=="yes"</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15ekxoi" sourceRef="Gateway_0vnmsmm" targetRef="Activity_1aa8il0" />
@@ -61,24 +61,28 @@
     <bpmn:sequenceFlow id="Flow_1wo35va" sourceRef="Activity_160ktzs" targetRef="Event_0pdfqt0" />
     <bpmn:manualTask id="Activity_160ktzs" name="Perform tests">
       <bpmn:extensionElements>
-        <spiffworkflow:instructionsForEndUser>Go to test tool: link</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:instructionsForEndUser>Go to test tool: link
+{{ response }}</spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0ei1djd</bpmn:incoming>
+      <bpmn:incoming>Flow_046c1az</bpmn:incoming>
       <bpmn:outgoing>Flow_1wo35va</bpmn:outgoing>
     </bpmn:manualTask>
     <bpmn:serviceTask id="Activity_07lbvfd" name="Test Service">
       <bpmn:extensionElements>
-        <spiffworkflow:serviceTaskOperator id="http/PostRequest">
+        <spiffworkflow:serviceTaskOperator id="http/GetRequest" resultVariable="response">
           <spiffworkflow:parameters>
             <spiffworkflow:parameter id="basic_auth_password" type="str" />
             <spiffworkflow:parameter id="basic_auth_username" type="str" />
-            <spiffworkflow:parameter id="data" type="any" />
             <spiffworkflow:parameter id="headers" type="any" />
-            <spiffworkflow:parameter id="url" type="str" />
+            <spiffworkflow:parameter id="params" type="any" />
+            <spiffworkflow:parameter id="url" type="str" value="http://google.com" />
           </spiffworkflow:parameters>
         </spiffworkflow:serviceTaskOperator>
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ei1djd</bpmn:incoming>
+      <bpmn:outgoing>Flow_046c1az</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_046c1az" sourceRef="Activity_07lbvfd" targetRef="Activity_160ktzs" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_yxvxjyy">
@@ -115,7 +119,7 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0fapqo4_di" bpmnElement="Activity_07lbvfd">
-        <dc:Bounds x="670" y="220" width="100" height="80" />
+        <dc:Bounds x="660" y="117" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0asurpr_di" bpmnElement="Flow_0asurpr">
@@ -124,7 +128,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0ei1djd_di" bpmnElement="Flow_0ei1djd">
         <di:waypoint x="635" y="157" />
-        <di:waypoint x="820" y="157" />
+        <di:waypoint x="660" y="157" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_15ekxoi_di" bpmnElement="Flow_15ekxoi">
         <di:waypoint x="610" y="132" />
@@ -152,6 +156,10 @@
       <bpmndi:BPMNEdge id="Flow_1wo35va_di" bpmnElement="Flow_1wo35va">
         <di:waypoint x="920" y="157" />
         <di:waypoint x="1032" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_046c1az_di" bpmnElement="Flow_046c1az">
+        <di:waypoint x="760" y="157" />
+        <di:waypoint x="820" y="157" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
