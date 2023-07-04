@@ -37,7 +37,7 @@
       <bpmn:outgoing>Flow_15ekxoi</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0ei1djd" sourceRef="Gateway_0vnmsmm" targetRef="Event_0pdfqt0">
-      <bpmn:conditionExpression>is_ics_valide==yes</bpmn:conditionExpression>
+      <bpmn:conditionExpression>is_the_ics_valide==yes</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15ekxoi" sourceRef="Gateway_0vnmsmm" targetRef="Activity_1aa8il0" />
     <bpmn:sequenceFlow id="Flow_0mhfxdp" sourceRef="Activity_1sy28s9" targetRef="Gateway_0vnmsmm" />
