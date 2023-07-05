@@ -235,6 +235,21 @@
           <text>"PG:playground:ricardo-silva"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1bhx5qi">
+        <description>for jason to test</description>
+        <inputEntry id="UnaryTests_16a5obw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_097twxl">
+          <text>"jason"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h8pri0">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05xvchq">
+          <text>"PG:playground:jason"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
