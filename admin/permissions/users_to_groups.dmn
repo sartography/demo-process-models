@@ -241,6 +241,17 @@
           <text>"ricardo-silva"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_04cx3n5">
+        <inputEntry id="UnaryTests_0u16w9y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17sp9mc">
+          <text>"jasquat@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q777az">
+          <text>"jason"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
