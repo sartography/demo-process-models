@@ -220,6 +220,21 @@
           <text>"PG:playground:benni-kambs"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0fnz5mr">
+        <description>Ricardo requested a playground on 7/4/23</description>
+        <inputEntry id="UnaryTests_1s7xxqb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05zdmwb">
+          <text>"ricardo-silva" </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qe6xdr">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u7hui6">
+          <text>"PG:playground:ricardo-silva" </text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
