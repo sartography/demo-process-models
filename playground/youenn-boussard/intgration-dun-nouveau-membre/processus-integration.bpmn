@@ -6,7 +6,7 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_19jtfic" sourceRef="Event_0e9uty9" targetRef="Activity_1rquepi" />
     <bpmn:endEvent id="Event_06m9dpe">
-      <bpmn:incoming>Flow_0dqccqw</bpmn:incoming>
+      <bpmn:incoming>Flow_1rdiboi</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:manualTask id="Activity_1rquepi" name="Message de bienvenue">
       <bpmn:extensionElements>
@@ -17,7 +17,19 @@
       <bpmn:incoming>Flow_19jtfic</bpmn:incoming>
       <bpmn:outgoing>Flow_0dqccqw</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:sequenceFlow id="Flow_0dqccqw" sourceRef="Activity_1rquepi" targetRef="Event_06m9dpe" />
+    <bpmn:sequenceFlow id="Flow_0dqccqw" sourceRef="Activity_1rquepi" targetRef="Activity_1gkxt4r" />
+    <bpmn:sequenceFlow id="Flow_1rdiboi" sourceRef="Activity_1gkxt4r" targetRef="Event_06m9dpe" />
+    <bpmn:userTask id="Activity_1gkxt4r">
+      <bpmn:extensionElements>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="quelle-est-le-rle-du-nouveau-collaborateur-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="quelle-est-le-rle-du-nouveau-collaborateur-uischema.json" />
+        </spiffworkflow:properties>
+        <spiffworkflow:instructionsForEndUser>## Choisissez le role du nouveau membre</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0dqccqw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rdiboi</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_b05czrw">
@@ -31,6 +43,9 @@
         <dc:Bounds x="520" y="-250" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ddj7lq_di" bpmnElement="Activity_1gkxt4r">
+        <dc:Bounds x="690" y="-250" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_19jtfic_di" bpmnElement="Flow_19jtfic">
         <di:waypoint x="358" y="-200" />
         <di:waypoint x="439" y="-200" />
@@ -39,8 +54,12 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0dqccqw_di" bpmnElement="Flow_0dqccqw">
         <di:waypoint x="620" y="-210" />
-        <di:waypoint x="861" y="-210" />
-        <di:waypoint x="861" y="-200" />
+        <di:waypoint x="690" y="-210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rdiboi_di" bpmnElement="Flow_1rdiboi">
+        <di:waypoint x="790" y="-210" />
+        <di:waypoint x="860" y="-210" />
+        <di:waypoint x="860" y="-200" />
         <di:waypoint x="1102" y="-200" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
