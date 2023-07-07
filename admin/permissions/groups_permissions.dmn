@@ -250,6 +250,21 @@
           <text>"PG:playground:jason"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1iok7n2">
+        <description>Andrew Webberley requested a playground on 7/7/23</description>
+        <inputEntry id="UnaryTests_1h53qfy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jatnc8">
+          <text>"expandable"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lqzb3k">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jc9gv6">
+          <text>"PG:playground:expandable"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
