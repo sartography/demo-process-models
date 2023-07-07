@@ -265,6 +265,21 @@
           <text>"PG:playground:expandable"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mz3kvd">
+        <description>Youenn Boussard requested a playground on 7/7/23</description>
+        <inputEntry id="UnaryTests_1t6ockf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_048xyej">
+          <text>"youenn-boussard"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04yz4wk">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ud8fnp">
+          <text>"PG:playground:youenn-boussard"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
