@@ -23,11 +23,12 @@
         <spiffworkflow:serviceTaskOperator id="slack/PostMessage" resultVariable="slack_result">
           <spiffworkflow:parameters>
             <spiffworkflow:parameter id="channel" type="str" value="&#39;team&#39;" />
-            <spiffworkflow:parameter id="message" type="str" value="&#39;New Demo Request!!!   Please visit the demo site at https://spiffdemo.org and look at tasks assigned to the Admin group.&#39;" />
+            <spiffworkflow:parameter id="message" type="str" value="f&#39;New Demo Request!!!   Please visit the demo site at https://spiffdemo.org and look at tasks assigned to the Admin group. {full_name} at {organization} with role {role} and wanting to: {purpose}&#39;" />
             <spiffworkflow:parameter id="token" type="str" value="&#39;secret:slack_token&#39;" />
           </spiffworkflow:parameters>
         </spiffworkflow:serviceTaskOperator>
         <spiffworkflow:preScript>current_user = get_current_user()</spiffworkflow:preScript>
+        <spiffworkflow:instructionsForEndUser></spiffworkflow:instructionsForEndUser>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_13pjly3</bpmn:incoming>
       <bpmn:outgoing>Flow_0eg1ebo</bpmn:outgoing>
