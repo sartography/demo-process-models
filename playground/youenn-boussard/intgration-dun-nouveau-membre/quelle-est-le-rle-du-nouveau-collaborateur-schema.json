@@ -1,0 +1,15 @@
+{
+  "title": "Quelle est le rôle du nouveau collaborateur ?",
+  "description": "",
+  "properties": {
+    "praticien": {
+      "type": "boolean",
+      "title": "praticien"
+    },
+    "assistant_mdical": {
+      "type": "boolean",
+      "title": "assistant médical"
+    }
+  },
+  "required": []
+}
