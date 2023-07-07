@@ -280,6 +280,21 @@
           <text>"PG:playground:youenn-boussard"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0v8np1w">
+        <description>Diego Pena requested a playground on 7/723</description>
+        <inputEntry id="UnaryTests_0eh6rq2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01eepli">
+          <text>"bp3-global"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06wxwlt">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00fcuok">
+          <text>"PG:playground:bp3-global"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
