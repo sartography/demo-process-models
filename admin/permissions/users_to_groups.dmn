@@ -263,6 +263,17 @@
           <text>"expandable"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1b6f1h9">
+        <inputEntry id="UnaryTests_0hr0rtu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17f6zzp">
+          <text>"yboussard@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t6nvvb">
+          <text>"youenn-boussard"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
