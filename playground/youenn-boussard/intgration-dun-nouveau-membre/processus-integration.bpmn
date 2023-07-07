@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
   <bpmn:process id="Process_b05czrw" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1" />
     <bpmn:startEvent id="Event_0e9uty9">
       <bpmn:outgoing>Flow_19jtfic</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1rquepi" name="envoyer mail au practicien">
-      <bpmn:incoming>Flow_19jtfic</bpmn:incoming>
-      <bpmn:outgoing>Flow_0a8bsa7</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:sequenceFlow id="Flow_19jtfic" sourceRef="Event_0e9uty9" targetRef="Activity_1rquepi" />
     <bpmn:endEvent id="Event_06m9dpe">
       <bpmn:incoming>Flow_0a8bsa7</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0a8bsa7" sourceRef="Activity_1rquepi" targetRef="Event_06m9dpe" />
+    <bpmn:manualTask id="Activity_1rquepi" name="Message de bienvenue">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>## Automatisation de l'intégration d'un membre d'ipso
+
+</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_19jtfic</bpmn:incoming>
+      <bpmn:outgoing>Flow_0a8bsa7</bpmn:outgoing>
+    </bpmn:manualTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_b05czrw">
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="162" y="192" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_06m9dpe_di" bpmnElement="Event_06m9dpe">
+        <dc:Bounds x="782" y="-228" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0e9uty9_di" bpmnElement="Event_0e9uty9">
-        <dc:Bounds x="172" y="-348" width="36" height="36" />
+        <dc:Bounds x="322" y="-218" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1rquepi_di" bpmnElement="Activity_1rquepi">
-        <dc:Bounds x="260" y="-370" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_1of6gn9_di" bpmnElement="Activity_1rquepi">
+        <dc:Bounds x="520" y="-250" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_06m9dpe_di" bpmnElement="Event_06m9dpe">
-        <dc:Bounds x="412" y="-348" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_19jtfic_di" bpmnElement="Flow_19jtfic">
-        <di:waypoint x="208" y="-330" />
-        <di:waypoint x="260" y="-330" />
+        <di:waypoint x="358" y="-200" />
+        <di:waypoint x="439" y="-200" />
+        <di:waypoint x="439" y="-210" />
+        <di:waypoint x="520" y="-210" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0a8bsa7_di" bpmnElement="Flow_0a8bsa7">
-        <di:waypoint x="360" y="-330" />
-        <di:waypoint x="412" y="-330" />
+        <di:waypoint x="620" y="-210" />
+        <di:waypoint x="782" y="-210" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
