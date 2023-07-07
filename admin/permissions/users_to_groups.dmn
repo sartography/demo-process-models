@@ -274,6 +274,17 @@
           <text>"youenn-boussard"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0i45bj3">
+        <inputEntry id="UnaryTests_0215tyy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13eb5z7">
+          <text>"diemape@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ie37pz">
+          <text>"bp3-global"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
