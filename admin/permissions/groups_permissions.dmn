@@ -295,6 +295,21 @@
           <text>"PG:playground:bp3-global"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0wvy1y8">
+        <description>Requested on 7/12/23</description>
+        <inputEntry id="UnaryTests_1udso2q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05aayoe">
+          <text>"volker-kuehn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11ab2u7">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sapa2l">
+          <text>"PG:playground:volker-kuehn"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
