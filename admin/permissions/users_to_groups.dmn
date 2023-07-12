@@ -285,6 +285,17 @@
           <text>"bp3-global"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ecmnvd">
+        <inputEntry id="UnaryTests_166a5rs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10p2gkb">
+          <text>"vkuehn@more-machines.org"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pcbiwh">
+          <text>"volker-kuehn"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
