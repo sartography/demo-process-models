@@ -1,0 +1,11 @@
+{
+    "description": "Try more complex things",
+    "display_name": "SecondTry",
+    "exception_notification_addresses": [
+        "vkuehn@more-machines.org"
+    ],
+    "fault_or_suspend_on_exception": "fault",
+    "metadata_extraction_paths": null,
+    "primary_file_name": null,
+    "primary_process_id": null
+}
