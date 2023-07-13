@@ -1,0 +1,1 @@
+{"title": "expense-report", "description": "", "properties": {"summary": {"type": "string", "title": "summary"}, "description": {"type": "string", "title": "description"}, "amount": {"type": "string", "title": "amount"}}, "required": []}

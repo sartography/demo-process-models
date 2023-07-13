@@ -1,0 +1,22 @@
+{
+    "description": null,
+    "display_name": "expense tracking",
+    "exception_notification_addresses": [],
+    "fault_or_suspend_on_exception": "fault",
+    "metadata_extraction_paths": [
+        {
+            "key": "summary",
+            "path": "summary"
+        },
+        {
+            "key": "description",
+            "path": "description"
+        },
+        {
+            "key": "amount",
+            "path": "amount"
+        }
+    ],
+    "primary_file_name": "expense-tracking.bpmn",
+    "primary_process_id": "expense-tracking_process"
+}
