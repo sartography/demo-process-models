@@ -1,0 +1,15 @@
+{
+  "title": "City Profile",
+  "description": "",
+  "properties": {
+    "name_of_nodal_officer": {
+      "type": "string",
+      "title": "Name of Nodal Officer"
+    },
+    "phone_number": {
+      "type": "string",
+      "title": "Phone Number"
+    }
+  },
+  "required": []
+}
