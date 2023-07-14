@@ -1,0 +1,11 @@
+{
+  "title": "Approve",
+  "description": "",
+  "properties": {
+    "approve_deny": {
+      "type": "boolean",
+      "title": "Approve / Deny"
+    }
+  },
+  "required": []
+}
