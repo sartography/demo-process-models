@@ -310,6 +310,20 @@
           <text>"PG:playground:volker-kuehn"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0bmssvf">
+        <inputEntry id="UnaryTests_0sz6kmd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04eospj">
+          <text>"kaninik"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ml3pwb">
+          <text>["all"]</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fqsl23">
+          <text>"PG:playground:kaninik"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
