@@ -296,6 +296,17 @@
           <text>"volker-kuehn"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0rockwk">
+        <inputEntry id="UnaryTests_1vpn4i7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tf0uw6">
+          <text>"kaninikbaradi@gmail.com"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02culu3">
+          <text>"kaninik"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
